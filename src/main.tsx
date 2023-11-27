@@ -15,7 +15,9 @@ const routes = [
     ],
   },
 ]
-const router = createBrowserRouter( routes );
+const router = createBrowserRouter( routes
+  , { basename: import.meta.env.MODE == 'gh-pages' ? '/aws-quiz/' : '/' } 
+  );
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
