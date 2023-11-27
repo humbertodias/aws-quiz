@@ -15,9 +15,7 @@ const routes = [
     ],
   },
 ]
-const router = createBrowserRouter( routes
-  , { basename: import.meta.env.DEV ? "/" : "/aws-quiz/" }
-);
+const router = createBrowserRouter( routes );
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

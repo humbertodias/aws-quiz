@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "gh-pages": "vite --mode gh-pages",
     "build": "tsc && vite build",
+    "build:gh-pages": "tsc && vite build --mode gh-pages",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
