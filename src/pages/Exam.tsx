@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import QuestionProps from "../type/QuestionProps";
 import Question from "../components/Question";
-import axios from "axios";
+import Api from "../services/Api";
 
 const Exam = () => {
   const { id } = useParams<string>();
@@ -11,7 +11,7 @@ const Exam = () => {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    axios
+    Api
       .get("/json/questions.json")
       .then((response) => {
         setQuestions(response.data.results);

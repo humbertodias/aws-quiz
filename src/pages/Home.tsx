@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import Api from "../services/Api";
 import ExamProps from "../type/ExamProps";
 
 
@@ -9,7 +9,7 @@ function Home() {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    axios
+    Api
       .get("/json/exams.json")
       .then((response) => {
         setExams(response.data.results);
