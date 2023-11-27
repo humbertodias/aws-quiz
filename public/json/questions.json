@@ -1,0 +1,160 @@
+{
+	"results": [
+		{
+			"id": 1001,
+			"task": 1,
+			"question": "La forma política del Estado español es la ...",
+			"incorrect_answers": [
+				"república federal.",
+				"monarquía federal."
+			],
+			"correct_answer": "monarquía parlamentaria.",
+			"c5": 0,
+			"hint": "Monarquía quiere decir que el Jefe del Estado es el Rey.\nPor eso decimos que España es un reino.\nDesde el año 2014 el rey de España es Felipe VI (antes lo fue su padre Juan Carlos I, desde 1975), de la dinastía de los Borbones.\nComo Jefe del Estado, el Rey es el jefe de ejército y el máximo representante de nuestro país en el exterior.\nLa monarquia española es parlamentaria, es decir, el poder reside en el pueblo, que lo ejerce a través de sus representantes en el Parlamento.\nPor tanto, es el Parlamento y no el Rey quien dirige la política española.",
+			"c7": 9418
+		},
+		{
+			"id": 1002,
+			"task": 1,
+			"question": "Una de las principales funciones del Senado es aprobar ...",
+			"incorrect_answers": [
+				"las leyes orgánicas.",
+				"el nombramiento de los ministros."
+			],
+			"correct_answer": "los Presupuestos Generales del Estado.",
+			"c5": 0,
+			"hint": "La Constitución española de 1978 (Artículo 66) otorga a las Cortes Generales y, por tanto, al Senado las tres funciones típicas de todo Parlamento: la potestad legislativa del Estado, la aprobación de sus presupuestos, y el control de la acción del Gobierno.",
+			"c7": 1223
+		},
+		{
+			"id": 1003,
+			"task": 2,
+			"question": "Según la Constitución española, la soberanía nacional reside en ...",
+			"incorrect_answers": [
+				"el Gobierno del Estado.",
+				"el Congreso de los Diputados."
+			],
+			"correct_answer": "el pueblo español.",
+			"c5": 0,
+			"hint": "Según el artículo 1 de la constitución española, en el parrafo 2: La soberanía nacional reside en el pueblo español, del que emanan los poderes del Estado.",
+			"c7": 0
+		},
+		{
+			"id": 1004,
+			"task": 3,
+			"question": "La Constitución reconoce y garantiza el derecho a la autonomía de las nacionalidades y regiones que integran España y la ...\nentre todas ellas.",
+			"incorrect_answers": [
+				"fraternidad",
+				"igualdad"
+			],
+			"correct_answer": "solidaridad",
+			"c5": 0,
+			"hint": "Según el artículo 2 de la constitucion española: La Constitución se fundamenta en la indisoluble unidad de la Nación española, patria común e indivisible de todos los españoles, y reconoce y garantiza el derecho a la autonomía de las nacionalidades y regiones que la integran y la solidaridad entre todas ellas.",
+			"c7": 7074
+		},
+		{
+			"id": 1005,
+			"task": 4,
+			"question": "La Constitución garantiza la libertad religiosa de los individuos y las comunidades, por eso España es un país ...",
+			"incorrect_answers": [
+				"laico.",
+				"católico."
+			],
+			"correct_answer": "aconfesional.",
+			"c5": 0,
+			"hint": "Un Estado aconfesional es aquel que no se adhiere y no reconoce como oficial ninguna religión en concreto, aunque pueda tener acuerdos con ciertas instituciones religiosas",
+			"c7": 1035
+		},
+		{
+			"id": 1006,
+			"task": 5,
+			"question": "La sede oficial del Rey de España es ...",
+			"incorrect_answers": [
+				"el Palacio de la Zarzuela.",
+				"el Palacio de la Moncloa."
+			],
+			"correct_answer": "el Palacio Real.",
+			"c5": 0,
+			"hint": "El Palacio Real de Madrid es la residencia oficial del rey de España; no obstante, los actuales reyes no habitan en él, sino en el Palacio de la Zarzuela, por lo que es utilizado para ceremonias de Estado y actos solemnes.​",
+			"c7": 4750
+		},
+		{
+			"id": 1007,
+			"task": 6,
+			"question": "El funcionamiento de las instituciones se garantiza por la ...\nde los poderes ejecutivo, legislativo y judicial.",
+			"incorrect_answers": [
+				"relación",
+				"unión"
+			],
+			"correct_answer": "separación",
+			"c5": 0,
+			"hint": "La Constitución define y delimita cada uno de los Poderes del Estado.\nEl clásico principio de separación de estos Poderes, implícito en los Títulos III, IV y VI",
+			"c7": 2335
+		},
+		{
+			"id": 1008,
+			"task": 1,
+			"question": "¿Cuál de las seguientes fuerzas y cuerpos de seguridad es de ámbito nacional?",
+			"incorrect_answers": [
+				"La Policía Foral.",
+				"Los Mossos d'Esquadra."
+			],
+			"correct_answer": "La Guardia Civil.",
+			"c5": 0,
+			"hint": "La Policia Foral es de Navarra y Los Mossos d'Escuadra son de Cataluña",
+			"c7": 6916
+		},
+		{
+			"id": 1009,
+			"task": 7,
+			"question": "En la Constitución se establece la separación entre el poder ejecutivo, el legislativo y el ...",
+			"incorrect_answers": [
+				"informativo.",
+				"político."
+			],
+			"correct_answer": "judicial.",
+			"c5": 0,
+			"hint": "La Constitución de 1978 se inspira en el principio de la división de poderes, a pesar de que no lo formula expresamente.\nEl poder ejecutivo recae en el Presidente, los vicepresidentes, los ministros y de los demás miembros del gobierno.",
+			"c7": 0
+		},
+		{
+			"id": 1010,
+			"task": 8,
+			"question": "Las competencias en materia de educación están gestionadas por ...",
+			"incorrect_answers": [
+				"el Estado.",
+				"los ayuntamientos."
+			],
+			"correct_answer": "las comunidades autónomas.",
+			"c5": 0,
+			"hint": "El articulo 19 de la Ley Orgánica 9/1992 transfiere a las Comunidades Autónomas la competencia de desarrollo legislativo y ejecucíon de la enseñanza en toda su extensión, niveles y grados, modalidades y especialidades.",
+			"c7": 0
+		},
+		{
+			"id": 1011,
+			"task": 10,
+			"question": "El referéndum para la aprobación de la Constitución española se celebró el día ...",
+			"incorrect_answers": [
+				"22 de noviembre de 1975.",
+				"15 de junio de 1977."
+			],
+			"correct_answer": "6 de diciembre de 1978.",
+			"c5": 0,
+			"hint": "Tuve lugar el miércules 6 de diciembre de 1978 y la pregunta plateada fue ¿Aprueba el Proyecto de Constitución?.\nEl Proyecto fue aprobado por el 87,78% de votantes, que representa el 58,97% del censo electoral.",
+			"c7": 8639
+		},
+		{
+			"id": 1012,
+			"task": 11,
+			"question": "Los colores de la bandera de la Comunidad Autónoma de Cantabria son ...",
+			"incorrect_answers": [
+				"blanco y verde.",
+				"amarillo y rojo."
+			],
+			"correct_answer": "blanco y rojo.",
+			"c5": 0,
+			"hint": "",
+			"c7": 1950
+		}
+	]
+}
