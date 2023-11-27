@@ -15,7 +15,7 @@ export default function Navbar() {
           >
             <img
               className="mr-2"
-              src="/aws.svg"
+              src="/public/aws.svg"
               style={{ height: 32 }}
               title="TE Logo"
               loading="lazy"

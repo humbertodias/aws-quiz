@@ -1,5 +1,5 @@
 type QuestionProps = {
-    id: number,
+    id: string,
     task: string,
     question: string,
     incorrect_answers: string[],

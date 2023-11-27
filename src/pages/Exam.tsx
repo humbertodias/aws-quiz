@@ -46,13 +46,12 @@ const Exam = () => {
 
   return (
     <div>
-      <h1 className="text-lg p-5">Exam {id}</h1>
+      {/* <h1 className="text-lg">Exam {id}</h1> */}
       {error?.message}
+      <div>{current + 1} / {questions.length}</div>
       <Question {...questions[current]} />
       <h1 className="text-center">
-        <div>
-          {current + 1} / {questions.length}
-        </div>
+    
         <div>
           <button onClick={onPrevious}>Previous</button> |{" "}
           <button onClick={onNext}>Next</button>
