@@ -6,6 +6,9 @@ export default defineConfig(({ command }) => {
   const config = {
     plugins: [react()],
     base: '/',
+    build: {
+      minify: false,
+    }
   }
 
   if (command !== 'serve') {
