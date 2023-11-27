@@ -5,18 +5,18 @@ import Home from "./pages/Home.tsx";
 import App from "./App.tsx";
 import Exam from "./pages/Exam.tsx";
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <App />,
-      children: [
-        { path: "/", element: <Home /> },
-        { path: "/exam/:id", element: <Exam /> },
-      ],
-    },
-  ],
-  { basename: import.meta.env.DEV ? "/" : "/aws-quiz/" }
+const routes = [
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/exam/:id", element: <Exam /> },
+    ],
+  },
+]
+const router = createBrowserRouter( routes
+  , { basename: import.meta.env.DEV ? "/" : "/aws-quiz/" }
 );
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
