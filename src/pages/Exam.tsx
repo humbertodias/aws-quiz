@@ -9,12 +9,12 @@ const Exam = () => {
 
   const [questions, setQuestions] = useState<QuestionProps[]>([]);
   const [error, setError] = useState<Error | null>(null);
+  const [current, setCurrent] = useState<number>(0);
 
   useEffect(() => {
-    Api
-      .get("/json/questions.json")
+    Api.get("/json/questions.json")
       .then((response) => {
-        setQuestions(response.data.results);
+        setQuestions(randomQuestions(response.data.results, id));
       })
       .catch((err) => {
         console.error(err);
@@ -22,17 +22,42 @@ const Exam = () => {
       });
   }, []);
 
+  const randomQuestions = (q: QuestionProps[], id: string | undefined) => {
+    return q
+      .filter((question) => question.task == id)
+      .sort(() => Math.random() - 0.5);
+  };
+
+  const onPrevious = () => {
+    canMoveLeft() && setCurrent(current - 1);
+  };
+
+  const onNext = () => {
+    canMoveRight() && setCurrent(current + 1);
+  };
+
+  const canMoveRight = () => {
+    return current + 1 < questions.length;
+  };
+
+  const canMoveLeft = () => {
+    return current > 0;
+  };
+
   return (
     <div>
-      <h1>Exam {id} </h1>
-
+      <h1 className="text-lg p-5">Exam {id}</h1>
       {error?.message}
-      {questions
-        .filter((question) => question.task == id)
-        .sort(() => Math.random() - 0.5)
-        .map((question) => {
-          return <Question {...question} />;
-        })}
+      <Question {...questions[current]} />
+      <h1 className="text-center">
+        <div>
+          {current + 1} / {questions.length}
+        </div>
+        <div>
+          <button onClick={onPrevious}>Previous</button> |{" "}
+          <button onClick={onNext}>Next</button>
+        </div>
+      </h1>
     </div>
   );
 };

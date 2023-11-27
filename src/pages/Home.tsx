@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Api from "../services/Api";
 import ExamProps from "../type/ExamProps";
-import Card from "../components/Card";
+import ExamCard from "../components/ExamCard";
 
 
 function Home() {
@@ -24,7 +24,7 @@ function Home() {
       {error}
       {exams.map((exam) => {
         return (
-          <Card {...exam} />
+          <ExamCard {...exam} />
         );
       })}
     </>
