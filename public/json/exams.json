@@ -1,16 +1,16 @@
 {
 	"results" : [
-	{"id": 1, "name": "AWS Certified: Cloud Practitioner", "image": "/badges/aws-certified-cloud-practitioner.png" ,"description": "TODO"},
-	{"id": 2, "name": "AWS Certified: Developer - Associate", "image": "/badges/aws-certified-developer-associate.png" ,"description": "TODO"},
-	{"id": 3, "name": "AWS Certified: Solutions Architect - Associate", "image": "/badges/aws-certified-solutions-architect-associate.png" ,"description": "TODO"},
-	{"id": 4, "name": "AWS Certified: SysOps Administrator - Associate", "image": "/badges/aws-certified-sysops-administrator-associate.png" ,"description": "TODO"},
-	{"id": 5, "name": "AWS Certified: DevOps Engineer - Professional", "image": "/badges/aws-certified-devops-engineer-professional.png" ,"description": "TODO"},
-	{"id": 6, "name": "AWS Certified: Solutions Architect - Professional", "image": "/badges/aws-certified-solutions-architect-professional.png" ,"description": "TODO"},
-	{"id": 7, "name": "AWS Certified: Advanced Netowking - Specialty", "image": "/badges/aws-certified-advanced-networking-specialty.png" ,"description":  "TODO"},
-	{"id": 8, "name": "AWS Certified: Data Analytics - Specialty", "image": "/badges/aws-certified-data-analytics-specialty.png" ,"description":  "TODO"},
-	{"id": 9, "name": "AWS Certified: Database - Specialty", "image": "/badges/aws-certified-database-specialty.png" ,"description":  "TODO"},
-	{"id": 10, "name": "AWS Certified: Machine Learning - Specialty", "image": "/badges/aws-certified-machine-learning-specialty.png" ,"description":  "TODO"},
-	{"id": 11, "name": "AWS Certified: SAP on AWS – Specialty", "image": "/badges/aws-certified-sap-on-aws-specialty.png" ,"description":  "TODO"},
-	{"id": 12, "name": "AWS Certified: Security – Specialty", "image": "/badges/aws-certified-security-specialty.png" ,"description":  "TODO"}
+	{"id": 1, "name": "AWS Certified: Cloud Practitioner", "image": "badges/aws-certified-cloud-practitioner.png" ,"description": "TODO"},
+	{"id": 2, "name": "AWS Certified: Developer - Associate", "image": "badges/aws-certified-developer-associate.png" ,"description": "TODO"},
+	{"id": 3, "name": "AWS Certified: Solutions Architect - Associate", "image": "badges/aws-certified-solutions-architect-associate.png" ,"description": "TODO"},
+	{"id": 4, "name": "AWS Certified: SysOps Administrator - Associate", "image": "badges/aws-certified-sysops-administrator-associate.png" ,"description": "TODO"},
+	{"id": 5, "name": "AWS Certified: DevOps Engineer - Professional", "image": "badges/aws-certified-devops-engineer-professional.png" ,"description": "TODO"},
+	{"id": 6, "name": "AWS Certified: Solutions Architect - Professional", "image": "badges/aws-certified-solutions-architect-professional.png" ,"description": "TODO"},
+	{"id": 7, "name": "AWS Certified: Advanced Netowking - Specialty", "image": "badges/aws-certified-advanced-networking-specialty.png" ,"description":  "TODO"},
+	{"id": 8, "name": "AWS Certified: Data Analytics - Specialty", "image": "badges/aws-certified-data-analytics-specialty.png" ,"description":  "TODO"},
+	{"id": 9, "name": "AWS Certified: Database - Specialty", "image": "badges/aws-certified-database-specialty.png" ,"description":  "TODO"},
+	{"id": 10, "name": "AWS Certified: Machine Learning - Specialty", "image": "badges/aws-certified-machine-learning-specialty.png" ,"description":  "TODO"},
+	{"id": 11, "name": "AWS Certified: SAP on AWS – Specialty", "image": "badges/aws-certified-sap-on-aws-specialty.png" ,"description":  "TODO"},
+	{"id": 12, "name": "AWS Certified: Security – Specialty", "image": "badges/aws-certified-security-specialty.png" ,"description":  "TODO"}
 	]
 }
