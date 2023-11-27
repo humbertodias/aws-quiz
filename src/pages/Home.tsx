@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Api from "../services/Api";
 import ExamProps from "../type/ExamProps";
+import Card from "../components/Card";
 
 
 function Home() {
@@ -24,12 +24,7 @@ function Home() {
       {error}
       {exams.map((exam) => {
         return (
-          <p>
-            <Link to={`/exam/${exam.id}`}>
-            <img src={exam.image} title={exam.description} style={{ width: 340, height: 340 }} />
-            </Link>
-          </p>
-          
+          <Card {...exam} />
         );
       })}
     </>
