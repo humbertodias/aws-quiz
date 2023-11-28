@@ -1,10 +1,23 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import QuestionProps from "../type/QuestionProps";
 import Question from "../components/Question";
 import Api from "../services/Api";
-import Navbar from "../components/Navbar";
 import { speakText } from "../speak";
+
+import Box from "@mui/material/Box";
+import LinearProgress from "@mui/material/LinearProgress";
+import AppBar from "@mui/material/AppBar";
+import IconButton from "@mui/material/IconButton";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import MenuIcon from "@mui/icons-material/Menu";
+import Button from "@mui/material/Button";
+
+import HomeIcon from "@mui/icons-material/Home";
+import CampaignIcon from '@mui/icons-material/Campaign';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 const Exam = () => {
   const { id, name } = useParams<string>();
@@ -49,29 +62,56 @@ const Exam = () => {
     speakText(currentQuestion.question);
   };
 
+  const progress = () => {
+    return current + 1 / questions.length;
+  };
+
   return (
-    <div className="justify-center mt-28">
-      <Navbar
-        title={`Exam - ${name}`}
-        image="/back.svg"
-        url="/#"
-        target={"_self"}
-      />
+    <>
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              {name}
+            </Typography>
+            <Link to="/">
+              <Button size="large" color="inherit" endIcon={<HomeIcon />}></Button>
+            </Link>
+          </Toolbar>
+        </AppBar>
+      </Box>
+
       <div className="p-10">
         {error?.message}
-        <div>
-          {current + 1} / {questions.length}
-        </div>
+        
         {questions.length > 0 && <Question {...questions[current]} />}
+
         <h1 className="text-center">
           <div>
-            <button onClick={onPrevious}>Previous</button> |
-            <button onClick={onNext}>Next</button> |
-            <button onClick={sayQuestion}>Say</button>
+            <Box sx={{ width: "100%" }}>
+            <div>
+              {current + 1} / {questions.length}
+            </div>
+              <LinearProgress variant="determinate" value={progress()} />
+            </Box>
+
+            <Button size="large" onClick={onPrevious} color="inherit" endIcon={<NavigateBeforeIcon />}></Button>
+            <Button size="large" onClick={onNext} color="inherit" endIcon={<NavigateNextIcon />}></Button>
+            <Button size="large" onClick={sayQuestion} color="inherit" endIcon={<CampaignIcon />}></Button>
+
           </div>
         </h1>
       </div>
-    </div>
+    </>
   );
 };
 
