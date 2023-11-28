@@ -1,4 +1,6 @@
-export default function Navbar() {
+import NavbarProps from "../type/NavbarProps";
+
+export default function Navbar(props: NavbarProps) {
   return (
     <>
       <nav
@@ -6,18 +8,17 @@ export default function Navbar() {
         data-te-navbar-ref
       >
         <div className="flex w-full flex-wrap items-center justify-between px-3 text-white">
-          <div>AWS - Quiz</div>
-
+          <div>{props.title}</div>
           <a
             className="mx-2 my-1 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 lg:mb-0 lg:mt-0"
-            href="https://github.com/humbertodias/aws-quiz"
-            target="_blank"
+            href={props.url}
+            target={props.target}
           >
             <img
               className="mr-2"
-              src="/public/aws.svg"
+              src={props.image}
               style={{ height: 32 }}
-              title="TE Logo"
+              title={props.title}
               loading="lazy"
             />
           </a>

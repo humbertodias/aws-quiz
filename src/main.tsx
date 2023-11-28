@@ -11,7 +11,7 @@ const routes = [
     element: <App />,
     children: [
       { path: "/", element: <Home /> },
-      { path: "/exam/:id", element: <Exam /> },
+      { path: "/exam/:id/:name", element: <Exam /> },
     ],
   },
 ]

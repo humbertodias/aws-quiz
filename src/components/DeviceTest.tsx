@@ -1,6 +1,6 @@
 import MediaQuery from "react-responsive";
 
-const Example = () => {
+const DeviceTest = () => {
   return (
     <div>
       <h1>Device Test!</h1>
@@ -20,4 +20,4 @@ const Example = () => {
   );
 };
 
-export default Example;
+export default DeviceTest;
