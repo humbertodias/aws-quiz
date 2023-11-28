@@ -26,7 +26,7 @@ const Exam = () => {
 
   const randomQuestions = (q: QuestionProps[], id: string | undefined) => {
     return q
-      .filter((question) => question.task == id)
+      .filter((question) => question.exam_id == id)
       .sort(() => Math.random() - 0.5);
   };
 

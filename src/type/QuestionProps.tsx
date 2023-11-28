@@ -1,6 +1,6 @@
 type QuestionProps = {
     id: string,
-    task: string,
+    exam_id: string,
     question: string,
     incorrect_answers: string[],
     correct_answers: string[],
