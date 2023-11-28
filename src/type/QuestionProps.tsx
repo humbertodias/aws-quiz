@@ -4,9 +4,7 @@ type QuestionProps = {
     question: string,
     incorrect_answers: string[],
     correct_answers: string[],
-    c5: string,
     hint: string,
-    c7: string
 }
 
 export default QuestionProps

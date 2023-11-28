@@ -1,16 +1,76 @@
 {
-	"results" : [
-	{"id": 1, "name": "AWS Certified: Cloud Practitioner", "image": "badges/aws-certified-cloud-practitioner.png" ,"description": "TODO"},
-	{"id": 2, "name": "AWS Certified: Developer - Associate", "image": "badges/aws-certified-developer-associate.png" ,"description": "TODO"},
-	{"id": 3, "name": "AWS Certified: Solutions Architect - Associate", "image": "badges/aws-certified-solutions-architect-associate.png" ,"description": "TODO"},
-	{"id": 4, "name": "AWS Certified: SysOps Administrator - Associate", "image": "badges/aws-certified-sysops-administrator-associate.png" ,"description": "TODO"},
-	{"id": 5, "name": "AWS Certified: DevOps Engineer - Professional", "image": "badges/aws-certified-devops-engineer-professional.png" ,"description": "TODO"},
-	{"id": 6, "name": "AWS Certified: Solutions Architect - Professional", "image": "badges/aws-certified-solutions-architect-professional.png" ,"description": "TODO"},
-	{"id": 7, "name": "AWS Certified: Advanced Netowking - Specialty", "image": "badges/aws-certified-advanced-networking-specialty.png" ,"description":  "TODO"},
-	{"id": 8, "name": "AWS Certified: Data Analytics - Specialty", "image": "badges/aws-certified-data-analytics-specialty.png" ,"description":  "TODO"},
-	{"id": 9, "name": "AWS Certified: Database - Specialty", "image": "badges/aws-certified-database-specialty.png" ,"description":  "TODO"},
-	{"id": 10, "name": "AWS Certified: Machine Learning - Specialty", "image": "badges/aws-certified-machine-learning-specialty.png" ,"description":  "TODO"},
-	{"id": 11, "name": "AWS Certified: SAP on AWS – Specialty", "image": "badges/aws-certified-sap-on-aws-specialty.png" ,"description":  "TODO"},
-	{"id": 12, "name": "AWS Certified: Security – Specialty", "image": "badges/aws-certified-security-specialty.png" ,"description":  "TODO"}
-	]
+  "results": [
+    {
+      "id": 1,
+      "name": "AWS Certified: Cloud Practitioner",
+      "image": "badges/aws-certified-cloud-practitioner.png",
+      "description": "The AWS Certified Cloud Practitioner validates foundational, high-level understanding of AWS Cloud, services, and terminology.  This is a good starting point on the AWS Certification journey for individuals with no prior IT or cloud experience switching to a cloud career or for line-of-business employees looking for foundational cloud literacy."
+    },
+    {
+      "id": 2,
+      "name": "AWS Certified: Developer - Associate",
+      "image": "badges/aws-certified-developer-associate.png",
+      "description": "AWS Certified Developer - Associate showcases knowledge and understanding of core AWS services, uses, and basic AWS architecture best practices, and proficiency in developing, deploying, and debugging cloud-based applications by using AWS. Preparing for and attaining this certification gives certified individuals more confidence and credibility. Organizations with AWS Certified developers have the assurance of having the right talent to give them a competitive advantage and ensure stakeholder and customer satisfaction."
+    },
+    {
+      "id": 3,
+      "name": "AWS Certified: Solutions Architect - Associate",
+      "image": "badges/aws-certified-solutions-architect-associate.png",
+      "description": "AWS Certified Solutions Architect - Associate showcases knowledge and skills in AWS technology, across a wide range of AWS services. The focus of this certification is on the design of cost and performance optimized solutions, demonstrating a strong understanding of the AWS Well-Architected Framework. This certification can enhance the career profile and earnings of certified individuals and increase your credibility and confidence in stakeholder and customer interactions."
+    },
+    {
+      "id": 4,
+      "name": "AWS Certified: SysOps Administrator - Associate",
+      "image": "badges/aws-certified-sysops-administrator-associate.png",
+      "description": "This credential helps organizations identify and develop talent with critical skills for implementing cloud initiatives. Earning AWS Certified SysOps Administrator - Associate validates experience in deploying, managing, and operating workloads on AWS."
+    },
+    {
+      "id": 5,
+      "name": "AWS Certified: DevOps Engineer - Professional",
+      "image": "badges/aws-certified-devops-engineer-professional.png",
+      "description": "The AWS Certified DevOps Engineer - Professional showcases individuals’ technical expertise in provisioning, operating, and managing distributed application systems on the AWS platform, giving them increased confidence and credibility with peers, stakeholders, and customers. Organizations with these qualified professionals can ensure speedy delivery of secure, compliant, systems that are highly available and scalable."
+    },
+    {
+      "id": 6,
+      "name": "AWS Certified: Solutions Architect - Professional",
+      "image": "badges/aws-certified-solutions-architect-professional.png",
+      "description": "This credential helps certified individuals showcase advanced knowledge and skills in providing complex solutions to complex problems, optimizing security, cost, and performance, and automating manual processes. This certification is a means for organizations to identify and develop talent with these critical skills for implementing cloud initiatives."
+    },
+    {
+      "id": 7,
+      "name": "AWS Certified: Advanced Netowking - Specialty",
+      "image": "badges/aws-certified-advanced-networking-specialty.png",
+      "description": "This credential helps organizations identify and develop talent with critical skills for implementing cloud initiatives. Earning AWS Certified Advanced Networking - Specialty validates expertise in designing and maintaining network architecture for the breadth of AWS services."
+    },
+    {
+      "id": 8,
+      "name": "AWS Certified: Data Analytics - Specialty",
+      "image": "badges/aws-certified-data-analytics-specialty.png",
+      "description": "This credential helps organizations identify and develop talent with critical skills for implementing cloud initiatives. Earning AWS Certified Data Analytics – Specialty validates expertise in using AWS data lakes and analytics services to get insights from data."
+    },
+    {
+      "id": 9,
+      "name": "AWS Certified: Database - Specialty",
+      "image": "badges/aws-certified-database-specialty.png",
+      "description": "This credential helps organizations identify and develop talent with critical skills for implementing cloud initiatives. Earning AWS Certified Database – Specialty validates expertise in recommending, designing, and maintaining optimal AWS database solutions."
+    },
+    {
+      "id": 10,
+      "name": "AWS Certified: Machine Learning - Specialty",
+      "image": "badges/aws-certified-machine-learning-specialty.png",
+      "description": "This credential helps organizations identify and develop talent with critical skills for implementing cloud initiatives. Earning AWS Certified Machine Learning - Specialty validates expertise in building, training, tuning, and deploying machine learning (ML) models on AWS."
+    },
+    {
+      "id": 11,
+      "name": "AWS Certified: SAP on AWS – Specialty",
+      "image": "badges/aws-certified-sap-on-aws-specialty.png",
+      "description": "This certification validates expertise in designing, implementing, migrating, and operating SAP workloads on AWS. Organizations can now identify and develop the right talent with critical knowledge and skills in optimizing SAP workloads on AWS."
+    },
+    {
+      "id": 12,
+      "name": "AWS Certified: Security – Specialty",
+      "image": "badges/aws-certified-security-specialty.png",
+      "description": "AWS Certified Security - Specialty validates your expertise in creating and implementing security solutions in the AWS Cloud. This certification also validates your understanding of specialized data classifications and AWS data protection mechanisms; data-encryption methods and AWS mechanisms to implement them; and secure internet protocols and AWS mechanisms to implement them."
+    }
+  ]
 }
