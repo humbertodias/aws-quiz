@@ -4,6 +4,7 @@ import QuestionProps from "../type/QuestionProps";
 import Question from "../components/Question";
 import Api from "../services/Api";
 import Navbar from "../components/Navbar";
+import { speakText } from "../speak";
 
 const Exam = () => {
   const { id, name } = useParams<string>();
@@ -45,6 +46,11 @@ const Exam = () => {
     return current > 0;
   };
 
+  const sayQuestion = () => {
+    const currentQuestion = questions[current];
+    speakText(currentQuestion.question);
+  };
+
   return (
     <div className="justify-center mt-28">
       <Navbar
@@ -61,8 +67,9 @@ const Exam = () => {
         {questions.length > 0 && <Question {...questions[current]} />}
         <h1 className="text-center">
           <div>
-            <button onClick={onPrevious}>Previous</button> |{" "}
-            <button onClick={onNext}>Next</button>
+            <button onClick={onPrevious}>Previous</button> |
+            <button onClick={onNext}>Next</button> |
+            <button onClick={sayQuestion}>Say</button>
           </div>
         </h1>
       </div>
