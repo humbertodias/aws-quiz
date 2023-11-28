@@ -14,9 +14,9 @@ const Exam = () => {
   const [current, setCurrent] = useState<number>(0);
 
   useEffect(() => {
-    Api.get("/json/questions.json")
+    Api.get(`/json/${id}.json`)
       .then((response) => {
-        setQuestions(randomQuestions(response.data.results, id));
+        setQuestions(randomQuestions(response.data.results));
       })
       .catch((err) => {
         console.error(err);
@@ -24,10 +24,8 @@ const Exam = () => {
       });
   }, []);
 
-  const randomQuestions = (q: QuestionProps[], id: string | undefined) => {
-    return q
-      .filter((question) => question.exam_id == id)
-      .sort(() => Math.random() - 0.5);
+  const randomQuestions = (q: QuestionProps[]) => {
+    return q.sort(() => Math.random() - 0.5);
   };
 
   const onPrevious = () => {

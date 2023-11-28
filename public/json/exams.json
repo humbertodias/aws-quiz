@@ -1,76 +1,136 @@
 {
   "results": [
     {
-      "id": 1,
+      "id": "CLF-C02",
       "name": "AWS Certified: Cloud Practitioner",
       "image": "badges/aws-certified-cloud-practitioner.png",
-      "description": "The AWS Certified Cloud Practitioner validates foundational, high-level understanding of AWS Cloud, services, and terminology.  This is a good starting point on the AWS Certification journey for individuals with no prior IT or cloud experience switching to a cloud career or for line-of-business employees looking for foundational cloud literacy."
+      "description": "The AWS Certified Cloud Practitioner validates foundational, high-level understanding of AWS Cloud, services, and terminology.  This is a good starting point on the AWS Certification journey for individuals with no prior IT or cloud experience switching to a cloud career or for line-of-business employees looking for foundational cloud literacy.",
+      "guide": "https://d1.awsstatic.com/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Exam-Guide.pdf",
+      "sample": "https://d1.awsstatic.com/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Sample-Questions.pdf",
+      "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/14050/aws-certified-cloud-practitioner-official-practice-question-set-clf-c02-english",
+      "category": "foundational",
+      "duration": "160min"
     },
     {
-      "id": 2,
+      "id": "DVA-C02",
       "name": "AWS Certified: Developer - Associate",
       "image": "badges/aws-certified-developer-associate.png",
-      "description": "AWS Certified Developer - Associate showcases knowledge and understanding of core AWS services, uses, and basic AWS architecture best practices, and proficiency in developing, deploying, and debugging cloud-based applications by using AWS. Preparing for and attaining this certification gives certified individuals more confidence and credibility. Organizations with AWS Certified developers have the assurance of having the right talent to give them a competitive advantage and ensure stakeholder and customer satisfaction."
+      "description": "AWS Certified Developer - Associate showcases knowledge and understanding of core AWS services, uses, and basic AWS architecture best practices, and proficiency in developing, deploying, and debugging cloud-based applications by using AWS. Preparing for and attaining this certification gives certified individuals more confidence and credibility. Organizations with AWS Certified developers have the assurance of having the right talent to give them a competitive advantage and ensure stakeholder and customer satisfaction.",
+      "guide": "https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Exam-Guide.pdf",
+      "sample": "https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Sample-Questions.pdf",
+      "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/13757/aws-certified-developer-associate-official-question-set-dva-c02-english",
+      "category": "associate",
+      "duration": "130min"
     },
     {
-      "id": 3,
+      "id": "SAA-C03",
       "name": "AWS Certified: Solutions Architect - Associate",
       "image": "badges/aws-certified-solutions-architect-associate.png",
-      "description": "AWS Certified Solutions Architect - Associate showcases knowledge and skills in AWS technology, across a wide range of AWS services. The focus of this certification is on the design of cost and performance optimized solutions, demonstrating a strong understanding of the AWS Well-Architected Framework. This certification can enhance the career profile and earnings of certified individuals and increase your credibility and confidence in stakeholder and customer interactions."
+      "description": "AWS Certified Solutions Architect - Associate showcases knowledge and skills in AWS technology, across a wide range of AWS services. The focus of this certification is on the design of cost and performance optimized solutions, demonstrating a strong understanding of the AWS Well-Architected Framework. This certification can enhance the career profile and earnings of certified individuals and increase your credibility and confidence in stakeholder and customer interactions.",
+      "guide": "https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS-Certified-Solutions-Architect-Associate_Exam-Guide.pdf",
+      "sample": "https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS-Certified-Solutions-Architect-Associate_Sample-Questions.pdf",
+      "practice": "",
+      "category": "associate",
+      "duration": "130min"
     },
     {
-      "id": 4,
+      "id": "SOA-C02",
       "name": "AWS Certified: SysOps Administrator - Associate",
       "image": "badges/aws-certified-sysops-administrator-associate.png",
-      "description": "This credential helps organizations identify and develop talent with critical skills for implementing cloud initiatives. Earning AWS Certified SysOps Administrator - Associate validates experience in deploying, managing, and operating workloads on AWS."
+      "description": "This credential helps organizations identify and develop talent with critical skills for implementing cloud initiatives. Earning AWS Certified SysOps Administrator - Associate validates experience in deploying, managing, and operating workloads on AWS.",
+      "guide": "https://d1.awsstatic.com/training-and-certification/docs-sysops-associate/AWS-Certified-SysOps-Administrator-Associate_Exam-Guide.pdf",
+      "sample": "https://d1.awsstatic.com/training-and-certification/docs-sysops-associate/AWS-Certified-SysOps-Administrator-Associate_Sample-Questions.pdf",
+      "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/12485/aws-certified-sysops-administrator-associate-practice-question-set-soa-c02-english?syops=sec&sec=prep",
+      "category": "associate",
+      "duration": "130min"
     },
     {
-      "id": 5,
+      "id": "DOP-C02",
       "name": "AWS Certified: DevOps Engineer - Professional",
       "image": "badges/aws-certified-devops-engineer-professional.png",
-      "description": "The AWS Certified DevOps Engineer - Professional showcases individuals’ technical expertise in provisioning, operating, and managing distributed application systems on the AWS platform, giving them increased confidence and credibility with peers, stakeholders, and customers. Organizations with these qualified professionals can ensure speedy delivery of secure, compliant, systems that are highly available and scalable."
+      "description": "The AWS Certified DevOps Engineer - Professional showcases individuals’ technical expertise in provisioning, operating, and managing distributed application systems on the AWS platform, giving them increased confidence and credibility with peers, stakeholders, and customers. Organizations with these qualified professionals can ensure speedy delivery of secure, compliant, systems that are highly available and scalable.",
+      "guide": "https://d1.awsstatic.com/training-and-certification/docs-devops-pro/AWS-Certified-DevOps-Engineer-Professional_Exam-Guide.pdf",
+      "sample": "https://d1.awsstatic.com/training-and-certification/docs-devops-pro/AWS-Certified-DevOps-Engineer-Professional_Sample-Questions.pdf",
+      "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/14673/aws-certified-devops-engineer-professional-official-practice-question-set-dop-c02-english",
+      "category": "professional",
+      "duration": "180min"
     },
     {
-      "id": 6,
+      "id": "SAP-C02",
       "name": "AWS Certified: Solutions Architect - Professional",
       "image": "badges/aws-certified-solutions-architect-professional.png",
-      "description": "This credential helps certified individuals showcase advanced knowledge and skills in providing complex solutions to complex problems, optimizing security, cost, and performance, and automating manual processes. This certification is a means for organizations to identify and develop talent with these critical skills for implementing cloud initiatives."
+      "description": "This credential helps certified individuals showcase advanced knowledge and skills in providing complex solutions to complex problems, optimizing security, cost, and performance, and automating manual processes. This certification is a means for organizations to identify and develop talent with these critical skills for implementing cloud initiatives.",
+      "guide": "https://d1.awsstatic.com/training-and-certification/docs-sa-pro/AWS-Certified-Solutions-Architect-Professional_Exam-Guide.pdf",
+      "sample": "https://d1.awsstatic.com/training-and-certification/docs-sa-pro/AWS-Certified-Solutions-Architect-Professional_Sample-Questions.pdf",
+      "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/13270/aws-certified-solutions-architect-professional-official-practice-question-set-sap-c02-english",
+      "category": "professional",
+      "duration": "180min"
     },
     {
-      "id": 7,
+      "id": "ANS-C01",
       "name": "AWS Certified: Advanced Netowking - Specialty",
       "image": "badges/aws-certified-advanced-networking-specialty.png",
-      "description": "This credential helps organizations identify and develop talent with critical skills for implementing cloud initiatives. Earning AWS Certified Advanced Networking - Specialty validates expertise in designing and maintaining network architecture for the breadth of AWS services."
+      "description": "This credential helps organizations identify and develop talent with critical skills for implementing cloud initiatives. Earning AWS Certified Advanced Networking - Specialty validates expertise in designing and maintaining network architecture for the breadth of AWS services.",
+      "guide": "https://d1.awsstatic.com/training-and-certification/docs-advnetworking-spec/AWS-Certified-Advanced-Networking-Specialty_Exam-Guide.pdf",
+      "sample": "https://d1.awsstatic.com/training-and-certification/docs-advnetworking-spec/AWS-Certified-Advanced-Networking-Specialty_Sample-Questions.pdf",
+      "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/12676/aws-certified-advanced-networking-specialty-official-practice-question-set-ans-c01-english?ans=sec&sec=prep",
+      "category": "specialty",
+      "duration": "170min"
     },
     {
-      "id": 8,
+      "id": "DAS-C01",
       "name": "AWS Certified: Data Analytics - Specialty",
       "image": "badges/aws-certified-data-analytics-specialty.png",
-      "description": "This credential helps organizations identify and develop talent with critical skills for implementing cloud initiatives. Earning AWS Certified Data Analytics – Specialty validates expertise in using AWS data lakes and analytics services to get insights from data."
+      "description": "This credential helps organizations identify and develop talent with critical skills for implementing cloud initiatives. Earning AWS Certified Data Analytics – Specialty validates expertise in using AWS data lakes and analytics services to get insights from data.",
+      "guide": "https://d1.awsstatic.com/training-and-certification/docs-data-analytics-specialty/AWS-Certified-Data-Analytics-Specialty_Exam-Guide.pdf",
+      "sample": "https://d1.awsstatic.com/training-and-certification/docs-data-analytics-specialty/AWS-Certified-Data-Analytics-Specialty_Sample-Questions.pdf",
+      "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/12472/aws-certified-data-analytics-specialty-official-practice-question-set-das-c01-english?das=sec&sec=prep",
+      "category": "specialty",
+      "duration": "170min"
     },
     {
-      "id": 9,
+      "id": "DBS-C01",
       "name": "AWS Certified: Database - Specialty",
       "image": "badges/aws-certified-database-specialty.png",
-      "description": "This credential helps organizations identify and develop talent with critical skills for implementing cloud initiatives. Earning AWS Certified Database – Specialty validates expertise in recommending, designing, and maintaining optimal AWS database solutions."
+      "description": "This credential helps organizations identify and develop talent with critical skills for implementing cloud initiatives. Earning AWS Certified Database – Specialty validates expertise in recommending, designing, and maintaining optimal AWS database solutions.",
+      "guide": "https://d1.awsstatic.com/training-and-certification/docs-database-specialty/AWS-Certified-Database-Specialty_Exam-Guide.pdf",
+      "sample": "https://d1.awsstatic.com/training-and-certification/docs-database-specialty/AWS-Certified-Database-Specialty_Sample-Questions.pdf",
+      "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/9405/aws-certified-database-specialty-official-practice-question-set-dbs-c01-english?dtbs=sec&sec=prep",
+      "category": "specialty",
+      "duration": "170min"
     },
     {
-      "id": 10,
+      "id": "MLS-C01",
       "name": "AWS Certified: Machine Learning - Specialty",
       "image": "badges/aws-certified-machine-learning-specialty.png",
-      "description": "This credential helps organizations identify and develop talent with critical skills for implementing cloud initiatives. Earning AWS Certified Machine Learning - Specialty validates expertise in building, training, tuning, and deploying machine learning (ML) models on AWS."
+      "description": "This credential helps organizations identify and develop talent with critical skills for implementing cloud initiatives. Earning AWS Certified Machine Learning - Specialty validates expertise in building, training, tuning, and deploying machine learning (ML) models on AWS.",
+      "guide": "https://d1.awsstatic.com/training-and-certification/docs-ml/AWS-Certified-Machine-Learning-Specialty_Exam-Guide.pdf",
+      "sample": "https://d1.awsstatic.com/training-and-certification/docs-ml/AWS-Certified-Machine-Learning-Specialty_Sample-Questions.pdf",
+      "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/12469/aws-certified-machine-learning-specialty-practice-question-set-mls-c01-english?ml=sec&sec=prep",
+      "category": "specialty",
+      "duration": "170min"
     },
     {
-      "id": 11,
-      "name": "AWS Certified: SAP on AWS – Specialty",
+      "id": "PAS-C01",
+      "name": "AWS Certified: SAP on AWS - Specialty",
       "image": "badges/aws-certified-sap-on-aws-specialty.png",
-      "description": "This certification validates expertise in designing, implementing, migrating, and operating SAP workloads on AWS. Organizations can now identify and develop the right talent with critical knowledge and skills in optimizing SAP workloads on AWS."
+      "description": "This certification validates expertise in designing, implementing, migrating, and operating SAP workloads on AWS. Organizations can now identify and develop the right talent with critical knowledge and skills in optimizing SAP workloads on AWS.",
+      "guide": "https://d1.awsstatic.com/training-and-certification/docs-sap-on-aws-specialty/SAP-on-AWS-Specialty_Exam-Guide.pdf",
+      "sample": "https://d1.awsstatic.com/training-and-certification/docs-sap-on-aws-specialty/SAP-on-AWS-Specialty_Sample-Questions.pdf",
+      "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/12474/aws-certified-sap-on-aws-specialty-official-question-set-pas-c01-english?pas=sec&sec=prep",
+      "category": "specialty",
+      "duration": "170min"
     },
     {
-      "id": 12,
-      "name": "AWS Certified: Security – Specialty",
+      "id": "SCS-C02",
+      "name": "AWS Certified: Security - Specialty",
       "image": "badges/aws-certified-security-specialty.png",
-      "description": "AWS Certified Security - Specialty validates your expertise in creating and implementing security solutions in the AWS Cloud. This certification also validates your understanding of specialized data classifications and AWS data protection mechanisms; data-encryption methods and AWS mechanisms to implement them; and secure internet protocols and AWS mechanisms to implement them."
+      "description": "AWS Certified Security - Specialty validates your expertise in creating and implementing security solutions in the AWS Cloud. This certification also validates your understanding of specialized data classifications and AWS data protection mechanisms; data-encryption methods and AWS mechanisms to implement them; and secure internet protocols and AWS mechanisms to implement them.",
+      "guide": "https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Specialty_Exam-Guide.pdf",
+      "sample": "https://d1.awsstatic.com/training-and-certification/docs/AWS_Certified_Security_Specialty_Sample_Questions.pdf",
+      "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/15222/aws-certified-security-specialty-official-practice-question-set-scs-c02-english",
+      "category": "specialty",
+      "duration": "130min"
     }
   ]
 }
