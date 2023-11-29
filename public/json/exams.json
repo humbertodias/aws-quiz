@@ -9,7 +9,8 @@
       "sample": "https://d1.awsstatic.com/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Sample-Questions.pdf",
       "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/14050/aws-certified-cloud-practitioner-official-practice-question-set-clf-c02-english",
       "category": "foundational",
-      "duration": "160min"
+      "duration": "160min",
+      "score": 700
     },
     {
       "id": "DVA-C02",
@@ -20,7 +21,8 @@
       "sample": "https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Sample-Questions.pdf",
       "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/13757/aws-certified-developer-associate-official-question-set-dva-c02-english",
       "category": "associate",
-      "duration": "130min"
+      "duration": "130min",
+      "score": 720
     },
     {
       "id": "SAA-C03",
@@ -31,7 +33,8 @@
       "sample": "https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS-Certified-Solutions-Architect-Associate_Sample-Questions.pdf",
       "practice": "",
       "category": "associate",
-      "duration": "130min"
+      "duration": "130min",
+      "score": 720
     },
     {
       "id": "SOA-C02",
@@ -42,7 +45,8 @@
       "sample": "https://d1.awsstatic.com/training-and-certification/docs-sysops-associate/AWS-Certified-SysOps-Administrator-Associate_Sample-Questions.pdf",
       "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/12485/aws-certified-sysops-administrator-associate-practice-question-set-soa-c02-english?syops=sec&sec=prep",
       "category": "associate",
-      "duration": "130min"
+      "duration": "130min",
+      "score": 720
     },
     {
       "id": "DOP-C02",
@@ -53,7 +57,8 @@
       "sample": "https://d1.awsstatic.com/training-and-certification/docs-devops-pro/AWS-Certified-DevOps-Engineer-Professional_Sample-Questions.pdf",
       "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/14673/aws-certified-devops-engineer-professional-official-practice-question-set-dop-c02-english",
       "category": "professional",
-      "duration": "180min"
+      "duration": "180min",
+      "score": 750
     },
     {
       "id": "SAP-C02",
@@ -64,7 +69,8 @@
       "sample": "https://d1.awsstatic.com/training-and-certification/docs-sa-pro/AWS-Certified-Solutions-Architect-Professional_Sample-Questions.pdf",
       "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/13270/aws-certified-solutions-architect-professional-official-practice-question-set-sap-c02-english",
       "category": "professional",
-      "duration": "180min"
+      "duration": "180min",
+      "score": 750
     },
     {
       "id": "ANS-C01",
@@ -75,7 +81,8 @@
       "sample": "https://d1.awsstatic.com/training-and-certification/docs-advnetworking-spec/AWS-Certified-Advanced-Networking-Specialty_Sample-Questions.pdf",
       "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/12676/aws-certified-advanced-networking-specialty-official-practice-question-set-ans-c01-english?ans=sec&sec=prep",
       "category": "specialty",
-      "duration": "170min"
+      "duration": "170min",
+      "score": 750
     },
     {
       "id": "DAS-C01",
@@ -86,7 +93,8 @@
       "sample": "https://d1.awsstatic.com/training-and-certification/docs-data-analytics-specialty/AWS-Certified-Data-Analytics-Specialty_Sample-Questions.pdf",
       "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/12472/aws-certified-data-analytics-specialty-official-practice-question-set-das-c01-english?das=sec&sec=prep",
       "category": "specialty",
-      "duration": "170min"
+      "duration": "170min",
+      "score": 750
     },
     {
       "id": "DBS-C01",
@@ -97,7 +105,8 @@
       "sample": "https://d1.awsstatic.com/training-and-certification/docs-database-specialty/AWS-Certified-Database-Specialty_Sample-Questions.pdf",
       "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/9405/aws-certified-database-specialty-official-practice-question-set-dbs-c01-english?dtbs=sec&sec=prep",
       "category": "specialty",
-      "duration": "170min"
+      "duration": "170min",
+      "score": 750
     },
     {
       "id": "MLS-C01",
@@ -119,7 +128,8 @@
       "sample": "https://d1.awsstatic.com/training-and-certification/docs-sap-on-aws-specialty/SAP-on-AWS-Specialty_Sample-Questions.pdf",
       "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/12474/aws-certified-sap-on-aws-specialty-official-question-set-pas-c01-english?pas=sec&sec=prep",
       "category": "specialty",
-      "duration": "170min"
+      "duration": "170min",
+      "score": 750
     },
     {
       "id": "SCS-C02",
@@ -130,7 +140,8 @@
       "sample": "https://d1.awsstatic.com/training-and-certification/docs/AWS_Certified_Security_Specialty_Sample_Questions.pdf",
       "practice": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/15222/aws-certified-security-specialty-official-practice-question-set-scs-c02-english",
       "category": "specialty",
-      "duration": "130min"
+      "duration": "130min",
+      "score": 750
     }
   ]
 }

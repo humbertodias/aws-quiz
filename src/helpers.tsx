@@ -9,3 +9,12 @@ export const shuffle = (array: string[]) => {
 export const compareArrays = (a: Array<unknown>, b: Array<unknown>) =>
   a.length === b.length &&
   a.every((element: unknown, index: number) => element === b[index]);
+
+export const randomBoolean = (): boolean => {
+  return Math.random() < 0.5;
+};
+
+
+export const randomBooleanArray = (size: number): boolean[] => {
+  return Array(size).fill(randomBoolean())
+};

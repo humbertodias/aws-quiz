@@ -14,17 +14,24 @@ import Button from "@mui/material/Button";
 
 import HomeIcon from "@mui/icons-material/Home";
 import CampaignIcon from "@mui/icons-material/Campaign";
+import CircularWithValueLabel from "../components/CircularProgressWithLabel";
+import { randomBoolean, randomBooleanArray } from "../helpers";
 
 const Result = () => {
   const { id } = useParams<string>();
 
   const [questions, setQuestions] = useState<QuestionProps[]>([]);
   const [error, setError] = useState<Error | null>(null);
+  const [corrects, setCorrects] = useState<boolean[]>(randomBooleanArray(10));
 
   useEffect(() => {
     Api.get(`/json/${id}.json`)
       .then((response) => {
         setQuestions(response.data.results);
+        setCorrects (questions.map(() => {
+          return randomBoolean()
+        })
+        )
       })
       .catch((err) => {
         console.error(err);
@@ -36,9 +43,28 @@ const Result = () => {
     speakText(questions[index].question);
   };
 
+  const countCorrect = () => {
+    return corrects.filter((c) => c == true).length;
+  };
+  const countIncorrect = () => {
+    return questions.length - countCorrect();
+  };
+
+  const score = () => {
+    if (countCorrect() <= 0) return 0;
+    return Math.round((questions.length / countCorrect()) * 1000);
+  };
+
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box
+        sx={{
+          flexWrap: "wrap",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+        }}
+      >
         <AppBar position="static">
           <Toolbar>
             <IconButton
@@ -64,12 +90,22 @@ const Result = () => {
           </Toolbar>
         </AppBar>
 
+        <div className="pt-5 text-center">
+          <CircularWithValueLabel />
+          <div>
+            <div className="text-green-700">Correct {countCorrect()}</div>
+            <div className="text-red-700">Incorrect {countIncorrect()}</div>
+            <div>Score {score()}</div>
+          </div>
+        </div>
+
         <div className="p-10">
           {error?.message}
 
           {questions.map((q, index) => {
             return (
-              <div>
+              <>
+                {corrects}
                 {index + 1} - {q.question}
                 <Button
                   onClick={() => sayQuestion(index)}
@@ -79,10 +115,16 @@ const Result = () => {
                 ></Button>
                 <br />
                 <br />
-                <li className="text-green-900">{q.correct_answers}</li>
+                <li
+                  className={
+                    corrects[index] ? "text-green-600" : "text-red-600"
+                  }
+                >
+                  {q.correct_answers}
+                </li>
                 <br /> <hr />
                 <br />
-              </div>
+              </>
             );
           })}
         </div>
