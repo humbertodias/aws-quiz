@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.tsx";
 import App from "./App.tsx";
 import Exam from "./pages/Exam.tsx";
+import Result from "./pages/Result.tsx";
 
 const routes = [
   {
@@ -11,7 +12,8 @@ const routes = [
     element: <App />,
     children: [
       { path: "/", element: <Home /> },
-      { path: "/exam/:id/:name", element: <Exam /> },
+      { path: "/exam/:id", element: <Exam /> },
+      { path: "/result/:id", element: <Result /> },
     ],
   },
 ]

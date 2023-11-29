@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import QuestionProps from "../type/QuestionProps";
 import Question from "../components/Question";
 import Api from "../services/Api";
@@ -16,15 +16,15 @@ import Button from "@mui/material/Button";
 
 import HomeIcon from "@mui/icons-material/Home";
 import CampaignIcon from "@mui/icons-material/Campaign";
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 const Exam = () => {
-  const { id, name } = useParams<string>();
+  const { id } = useParams<string>();
 
   const [questions, setQuestions] = useState<QuestionProps[]>([]);
   const [error, setError] = useState<Error | null>(null);
   const [current, setCurrent] = useState<number>(0);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     Api.get(`/json/${id}.json`)
@@ -35,7 +35,7 @@ const Exam = () => {
         console.error(err);
         setError(err);
       });
-  }, []);
+  }, [id]);
 
   const randomQuestions = (q: QuestionProps[]) => {
     return q.sort(() => Math.random() - 0.5);
@@ -46,12 +46,17 @@ const Exam = () => {
   };
 
   const onNext = () => {
-    canMoveRight() && setCurrent(current + 1);
+    if (canMoveRight()) {
+      setCurrent(current + 1);
+    } else {
+      navigate(`/result/${id}`)
+    }
   };
 
   const canMoveRight = () => {
-    return current + 1 < questions.length;
+    return current + 1 < questions.length
   };
+
 
   const canMoveLeft = () => {
     return current > 0;
@@ -88,28 +93,29 @@ const Exam = () => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              {name}
+              {id}
             </Typography>
             <Link to="/">
               <Button
                 size="large"
                 color="inherit"
                 endIcon={<HomeIcon />}
-              ></Button>
+                title="Go back to Home"
+                ></Button>
             </Link>
+            <Button
+              size="large"
+              onClick={sayQuestion}
+              color="inherit"
+              endIcon={<CampaignIcon />}
+              title="Read outloud the question"
+            ></Button>
           </Toolbar>
         </AppBar>
-      </Box>
 
-      <div className="p-10">
+
+        <div className="p-10">
         {error?.message}
-
-        <Button
-          size="large"
-          onClick={sayQuestion}
-          color="inherit"
-          endIcon={<CampaignIcon />}
-        ></Button>
 
         {questions.length > 0 && <Question {...currentQuestion()} />}
 
@@ -124,11 +130,12 @@ const Exam = () => {
               <LinearProgress variant="determinate" value={progress()} />
             </Box>
 
-            <Button size="large" onClick={onPrevious} color="inherit" endIcon={<NavigateBeforeIcon />}></Button>
-            <Button size="large" onClick={onNext} color="inherit" endIcon={<NavigateNextIcon />}></Button>
           </div>
         </h1>
       </div>
+
+      </Box>
+
     </>
   );
 };

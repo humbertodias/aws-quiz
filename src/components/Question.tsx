@@ -27,7 +27,7 @@ const Question = (question: QuestionProps) => {
         onClick: onSelect,
       } as AlternativeProps;
     });
-    console.log(ss);
+
     setAlternatives(ss);
     setAnswers([]);
     setShowHint(false);
@@ -96,7 +96,7 @@ const Question = (question: QuestionProps) => {
 
       {showHint && (
         <Alert severity="error" onClose={() => question.moveNext()}>
-          <AlertTitle>Hint!</AlertTitle>
+          <AlertTitle>Tip - Close to see the next question</AlertTitle>
           {question.hint}
         </Alert>
       )}
