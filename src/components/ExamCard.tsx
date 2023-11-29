@@ -3,8 +3,8 @@ import ExamProps from "../type/ExamProps";
 
 function ExamCard(exam: ExamProps) {
   return (
-    <>
-      <Link to={`/exam/${exam.id}/${exam.name}`} key={exam.id}>
+    <div key={exam.id}>
+      <Link to={`/exam/${exam.id}/${exam.name}`}>
         <img
           src={exam.image}
           title={exam.name}
@@ -12,7 +12,7 @@ function ExamCard(exam: ExamProps) {
           className="transition ease-in-out delay-15 hover:-translate-y-1 hover:scale-110 duration-300"
         />
       </Link>
-    </>
+    </div>
   );
 }
 

@@ -30,7 +30,7 @@ function Home() {
 
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexWrap: 'wrap', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
         <AppBar position="static">
           <Toolbar>
             <IconButton
@@ -53,14 +53,13 @@ function Home() {
             </Link>
           </Toolbar>
         </AppBar>
-      </Box>
 
-      <div className="flex flex-wrap">
         {error?.message}
         {exams.map((exam) => {
-          return <ExamCard {...exam} />;
+          return <ExamCard {...exam} key={exam.id} />;
         })}
-      </div>
+        
+      </Box>
     </>
   );
 }
