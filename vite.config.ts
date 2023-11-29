@@ -38,7 +38,7 @@ const manifestForPlugin: Partial<VitePWAOptions> = {
 		background_color: "#e8ebf2",
 		display: "standalone",
 		scope: "/",
-		start_url: "/",
+		start_url: "/aws-quiz/",
 		orientation: "portrait",
 	},
 };
