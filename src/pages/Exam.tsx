@@ -15,9 +15,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
 
 import HomeIcon from "@mui/icons-material/Home";
-import CampaignIcon from '@mui/icons-material/Campaign';
-import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import CampaignIcon from "@mui/icons-material/Campaign";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 const Exam = () => {
   const { id, name } = useParams<string>();
@@ -66,6 +66,13 @@ const Exam = () => {
     return current + 1 / questions.length;
   };
 
+  const currentQuestion = () => {
+    const cq = questions[current];
+    cq.moveNext = onNext;
+    cq.movePrevious = onPrevious;
+    return cq;
+  };
+
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
@@ -84,7 +91,11 @@ const Exam = () => {
               {name}
             </Typography>
             <Link to="/">
-              <Button size="large" color="inherit" endIcon={<HomeIcon />}></Button>
+              <Button
+                size="large"
+                color="inherit"
+                endIcon={<HomeIcon />}
+              ></Button>
             </Link>
           </Toolbar>
         </AppBar>
@@ -92,22 +103,29 @@ const Exam = () => {
 
       <div className="p-10">
         {error?.message}
-        
-        {questions.length > 0 && <Question {...questions[current]} />}
 
+        <Button
+          size="large"
+          onClick={sayQuestion}
+          color="inherit"
+          endIcon={<CampaignIcon />}
+        ></Button>
+
+        {questions.length > 0 && <Question {...currentQuestion()} />}
+
+        <br />
         <h1 className="text-center">
           <div>
             <Box sx={{ width: "100%" }}>
-            <div>
-              {current + 1} / {questions.length}
-            </div>
+              <div>
+                {current + 1} / {questions.length}
+              </div>
+              <br />
               <LinearProgress variant="determinate" value={progress()} />
             </Box>
 
             <Button size="large" onClick={onPrevious} color="inherit" endIcon={<NavigateBeforeIcon />}></Button>
             <Button size="large" onClick={onNext} color="inherit" endIcon={<NavigateNextIcon />}></Button>
-            <Button size="large" onClick={sayQuestion} color="inherit" endIcon={<CampaignIcon />}></Button>
-
           </div>
         </h1>
       </div>

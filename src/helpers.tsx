@@ -5,3 +5,7 @@ export const shuffle = (array: string[]) => {
   }
   return array;
 };
+
+export const compareArrays = (a: Array<unknown>, b: Array<unknown>) =>
+  a.length === b.length &&
+  a.every((element: unknown, index: number) => element === b[index]);

@@ -4,7 +4,7 @@ import ExamProps from "../type/ExamProps";
 function ExamCard(exam: ExamProps) {
   return (
     <>
-      <Link to={`/exam/${exam.id}/${exam.name}`}>
+      <Link to={`/exam/${exam.id}/${exam.name}`} key={exam.id}>
         <img
           src={exam.image}
           title={exam.name}

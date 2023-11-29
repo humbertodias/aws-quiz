@@ -5,6 +5,8 @@ type QuestionProps = {
     incorrect_answers: string[],
     correct_answers: string[],
     hint: string,
+    moveNext: ()=> void;
+    movePrevious: ()=> void;
 }
 
 export default QuestionProps
