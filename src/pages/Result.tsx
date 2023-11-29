@@ -65,7 +65,7 @@ const Result = () => {
           justifyContent: "center",
         }}
       >
-        <AppBar position="static">
+        <AppBar position="sticky">
           <Toolbar>
             <IconButton
               size="large"

@@ -31,7 +31,7 @@ function Home() {
   return (
     <>
       <Box sx={{ flexWrap: 'wrap', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
-        <AppBar position="static">
+        <AppBar position="sticky">
           <Toolbar>
             <IconButton
               size="large"
