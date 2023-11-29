@@ -5,8 +5,6 @@ import AlternativeState from "../type/AlternativeState";
 import QuestionProps from "../type/QuestionProps";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle/AlertTitle";
-import Snackbar from "@mui/material/Snackbar/Snackbar";
-// import Alternative from "./Alternative";
 
 const Question = (question: QuestionProps) => {
   const [answers, setAnswers] = useState<string[]>([]);
@@ -102,7 +100,7 @@ const Question = (question: QuestionProps) => {
           {question.hint}
         </Alert>
       )}
-      
+
       {/* {alternatives.map((alternative) => {
         return <Alternative {...alternative} />;
       })} */}
