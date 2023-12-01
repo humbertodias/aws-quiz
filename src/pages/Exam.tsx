@@ -91,10 +91,6 @@ const Exam = () => {
     return cq;
   };
 
-  const currentExamName = () => {
-    return exams.value.filter((e) => e.id == id).map(e => e.name)
-  }
-
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
