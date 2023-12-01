@@ -130,10 +130,13 @@ const Exam = () => {
           </Toolbar>
         </AppBar>
 
+
         <div className="p-10">
         {error?.message}
 
-        {questions.value.length > 0 && <Question {...currentQuestion()} />}
+        {questions.value.length ==0 && <Link to="/"><Button variant="outlined" color="error">Questions not found. Try another Exam</Button></Link>}
+
+        {questions.value.length > 0 && <><Question {...currentQuestion()} /> 
 
         <br />
         <h1 className="text-center">
@@ -147,7 +150,10 @@ const Exam = () => {
             </Box>
 
           </div>
-        </h1>
+          </h1> 
+          </>
+          }
+
       </div>
 
       </Box>
