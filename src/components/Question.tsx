@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { compareArrays, shuffle } from "../helpers";
 import AlternativeProps from "../type/AlternativeProps";
 import AlternativeState from "../type/AlternativeState";
@@ -6,12 +6,14 @@ import QuestionProps from "../type/QuestionProps";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle/AlertTitle";
 
-const Question = (question: QuestionProps) => {
-  const [answers, setAnswers] = useState<string[]>([]);
-  const [alternatives, setAlternatives] = useState<AlternativeProps[]>([]);
-  const [expire, setExpire] = useState<string | null>(null);
-  const [showHint, setShowHint] = useState<boolean>(false);
+import { signal } from "@preact/signals-react"
+const alternatives = signal<AlternativeProps[]>([]);
+const answers = signal<string[]>([]);
+const expire = signal<string | null>(null);
+const showHint = signal<boolean>(false);
 
+const Question = (question: QuestionProps) => {
+  
   const questions = [
     ...question.correct_answers,
     ...question.incorrect_answers,
@@ -28,47 +30,51 @@ const Question = (question: QuestionProps) => {
       } as AlternativeProps;
     });
 
-    setAlternatives(ss);
-    setAnswers([]);
-    setShowHint(false);
+    alternatives.value = ss;
+    answers.value = [] as string[];
+    for(let i=0; i < ss.length; i++){
+      answers.value.push()
+    }
+    showHint.value = false;
   }, [question.id]);
 
   useEffect(() => {
-    console.log("expire", expire);
-    if (expire == null) return;
+    if (expire.value == null) return;
     const timeoutID = setTimeout(() => question.moveNext(), 1000);
     return () => clearTimeout(timeoutID);
-  }, [expire]);
+  }, [expire.value]);
 
   function onSelect(index: number) {
-    const answer = alternatives[index].statement;
+    const answer = alternatives.value[index].statement;
 
     // select/deselect
-    const newState = answers.includes(answer)
+    const newState = answers.value.includes(answer)
       ? AlternativeState.DESELECTED
       : AlternativeState.SELECTED;
     switch (newState) {
       case AlternativeState.DESELECTED:
-        delete answers[index];
+        answers.value[index] = ''
         break;
       case AlternativeState.SELECTED:
-        answers.push(answer);
+        answers.value[index] = answer;
         break;
     }
     updateState(index, newState);
 
     // final answer
-    if (question.correct_answers.length == answers.length) {
-      const newState = compareArrays(question.correct_answers, answers)
+    if (question.correct_answers.length == selectedAnswers().length) {
+      const newState = compareArrays(question.correct_answers, answers.value)
         ? AlternativeState.CORRECT
         : AlternativeState.INCORRECT;
-
+      
       switch (newState) {
         case AlternativeState.CORRECT:
-          setExpire(question.id);
+          expire.value = question.id
+          question.onAnswer(true)
           break;
         case AlternativeState.INCORRECT:
-          setShowHint(true);
+          showHint.value = true
+          question.onAnswer(false)
           break;
       }
       updateState(index, newState);
@@ -76,8 +82,8 @@ const Question = (question: QuestionProps) => {
   }
 
   const updateState = (index: number, astate: AlternativeState) => {
-    const newState = alternatives.map((obj) => {
-      // 👇️ if id equals 2, update country property
+    const newState = alternatives.value.map((obj) => {
+      // 👇️ if obj.id equals index, update property
       if (obj.index === index) {
         return { ...obj, state: astate };
       }
@@ -86,15 +92,19 @@ const Question = (question: QuestionProps) => {
       return obj;
     });
 
-    setAlternatives(newState);
+    alternatives.value = newState
   };
+
+  const selectedAnswers = () => {
+    return answers.value.filter(a => a != '')
+  }
 
   return (
     <div key={question.id}>
       <div className="text-lg">{question.question}</div>
       <br />
 
-      {showHint && (
+      {showHint.value && (
         <Alert severity="error" onClose={() => question.moveNext()}>
           <AlertTitle>Tip - Close to see the next question</AlertTitle>
           {question.hint}
@@ -104,8 +114,8 @@ const Question = (question: QuestionProps) => {
       {/* {alternatives.map((alternative) => {
         return <Alternative {...alternative} />;
       })} */}
-
-      {alternatives.map((a) => {
+      {/* {selectedAnswers().length} */}
+      {alternatives.value.map((a) => {
         return (
           <div
             key={a.index}
@@ -117,7 +127,6 @@ const Question = (question: QuestionProps) => {
           </div>
         );
       })}
-
 
     </div>
   );

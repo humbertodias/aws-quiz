@@ -8,6 +8,7 @@ type ExamProps = {
     practice: string;
     category: string;
     duration: string;
+    score: number
   };
 
   export default ExamProps;

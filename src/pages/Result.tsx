@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import QuestionProps from "../type/QuestionProps";
-import Api from "../services/Api";
 import { speakText } from "../speak";
 
 import Box from "@mui/material/Box";
@@ -14,45 +11,39 @@ import Button from "@mui/material/Button";
 
 import HomeIcon from "@mui/icons-material/Home";
 import CampaignIcon from "@mui/icons-material/Campaign";
-import CircularWithValueLabel from "../components/CircularProgressWithLabel";
-import { randomBoolean, randomBooleanArray } from "../helpers";
+
+import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle/AlertTitle";
+
+
+import { exams, questions, corrects } from "../store";
 
 const Result = () => {
-  const { id } = useParams<string>();
-
-  const [questions, setQuestions] = useState<QuestionProps[]>([]);
-  const [error, setError] = useState<Error | null>(null);
-  const [corrects, setCorrects] = useState<boolean[]>(randomBooleanArray(10));
-
-  useEffect(() => {
-    Api.get(`/json/${id}.json`)
-      .then((response) => {
-        setQuestions(response.data.results);
-        setCorrects (questions.map(() => {
-          return randomBoolean()
-        })
-        )
-      })
-      .catch((err) => {
-        console.error(err);
-        setError(err);
-      });
-  }, [id]);
+  const { id } = useParams<string>()
 
   const sayQuestion = (index: number) => {
-    speakText(questions[index].question);
+    speakText(questions.value[index].question);
   };
 
   const countCorrect = () => {
-    return corrects.filter((c) => c == true).length;
+    return corrects.value.filter((c) => c == true).length;
   };
+
   const countIncorrect = () => {
-    return questions.length - countCorrect();
+    return questions.value.length - countCorrect();
   };
 
   const score = () => {
-    if (countCorrect() <= 0) return 0;
-    return Math.round((questions.length / countCorrect()) * 1000);
+    return countCorrect() * 100;
+  };
+
+  const result = () => {
+    return score() >= currentExam()[0].score;
+  };
+
+
+  const currentExam = () => {
+    return exams.value.filter((e) => e.id == id)
   };
 
   return (
@@ -77,7 +68,7 @@ const Result = () => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Result {id}
+              Result {id} {currentExam()[0].name}
             </Typography>
             <Link to="/">
               <Button
@@ -91,39 +82,58 @@ const Result = () => {
         </AppBar>
 
         <div className="pt-5 text-center">
-          <CircularWithValueLabel />
           <div>
             <div className="text-green-700">Correct {countCorrect()}</div>
             <div className="text-red-700">Incorrect {countIncorrect()}</div>
-            <div>Score {score()}</div>
+            <div>Score {score()} / {currentExam()[0].score}</div>
+            <div>Result {result() ? "Pass" : "Fail"}</div>
           </div>
         </div>
 
-        <div className="p-10">
-          {error?.message}
 
-          {questions.map((q, index) => {
+        <div className="p-10">
+
+          {questions.value.map((q, index) => {
             return (
               <>
-                {corrects}
                 {index + 1} - {q.question}
-                <Button
+                <br />
+                <br />
+    
+                {q.incorrect_answers.map((a) => {
+                  return (
+                  <div>
+                    <Button
                   onClick={() => sayQuestion(index)}
                   color="inherit"
                   endIcon={<CampaignIcon />}
                   title="Read outloud the question"
                 ></Button>
-                <br />
-                <br />
-                <li
-                  className={
-                    corrects[index] ? "text-green-600" : "text-red-600"
-                  }
-                >
-                  {q.correct_answers}
-                </li>
-                <br /> <hr />
-                <br />
+                    {a}
+                  </div>
+                  )
+                })}
+
+
+                {q.correct_answers.map((a) => {
+                  return (
+                  <div className="text-green-700">
+                    <Button
+                  onClick={() => sayQuestion(index)}
+                  color="inherit"
+                  endIcon={<CampaignIcon />}
+                  title="Read outloud the question"
+                ></Button>
+                    {a}
+                  </div>
+                  )
+                })}
+                <span className="p-2"></span>
+                <Alert severity={corrects.value[index] ? "success" : "error"}>
+                  <AlertTitle>{corrects.value[index] ? "Correct" : "Incorrect"}</AlertTitle>
+                  {q.hint}
+                </Alert>
+                <br></br>
               </>
             );
           })}

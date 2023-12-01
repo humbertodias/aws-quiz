@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Api from "../services/Api";
-import ExamProps from "../type/ExamProps";
 import ExamCard from "../components/ExamCard";
 
 import Box from "@mui/material/Box";
@@ -13,15 +12,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
 
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { exams } from "../store";
 
 function Home() {
-  const [exams, setExams] = useState<ExamProps[]>([]);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     Api.get("/json/exams.json")
       .then((response) => {
-        setExams(response.data.results);
+        exams.value = response.data.results
       })
       .catch((err) => {
         setError(err);
@@ -53,9 +52,8 @@ function Home() {
             </Link>
           </Toolbar>
         </AppBar>
-
         {error?.message}
-        {exams.map((exam) => {
+        {exams.value.map((exam) => {
           return <ExamCard {...exam} key={exam.id} />;
         })}
         

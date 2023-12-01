@@ -17,24 +17,33 @@ import Button from "@mui/material/Button";
 import HomeIcon from "@mui/icons-material/Home";
 import CampaignIcon from "@mui/icons-material/Campaign";
 
+import { exams, questions, corrects } from "../store";
+
 const Exam = () => {
   const { id } = useParams<string>();
 
-  const [questions, setQuestions] = useState<QuestionProps[]>([]);
   const [error, setError] = useState<Error | null>(null);
   const [current, setCurrent] = useState<number>(0);
 
   const navigate = useNavigate();
-
+  
   useEffect(() => {
     Api.get(`/json/${id}.json`)
       .then((response) => {
-        setQuestions(randomQuestions(response.data.results));
+        questions.value = randomQuestions(response.data.results);
       })
       .catch((err) => {
         console.error(err);
         setError(err);
+      }).finally(()=> {
+
+        corrects.value = [] as boolean[];
+        for(let i=0; i< questions.value.length; i++){
+          corrects.value.push()
+        }
+  
       });
+
   }, [id]);
 
   const randomQuestions = (q: QuestionProps[]) => {
@@ -45,6 +54,10 @@ const Exam = () => {
     canMoveLeft() && setCurrent(current - 1);
   };
 
+  const onAnswer = (correct: boolean) => {
+    corrects.value[current] = correct
+  }
+
   const onNext = () => {
     if (canMoveRight()) {
       setCurrent(current + 1);
@@ -54,29 +67,33 @@ const Exam = () => {
   };
 
   const canMoveRight = () => {
-    return current + 1 < questions.length
+    return current + 1 < questions.value.length
   };
-
 
   const canMoveLeft = () => {
     return current > 0;
   };
 
   const sayQuestion = () => {
-    const currentQuestion = questions[current];
+    const currentQuestion = questions.value[current];
     speakText(currentQuestion.question);
   };
 
   const progress = () => {
-    return current + 1 / questions.length;
+    return current + 1 / questions.value.length;
   };
 
   const currentQuestion = () => {
-    const cq = questions[current];
+    const cq = questions.value[current];
     cq.moveNext = onNext;
     cq.movePrevious = onPrevious;
+    cq.onAnswer = onAnswer
     return cq;
   };
+
+  const currentExamName = () => {
+    return exams.value.filter((e) => e.id == id).map(e => e.name)
+  }
 
   return (
     <>
@@ -93,7 +110,7 @@ const Exam = () => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              {id}
+              {id} - {currentExamName()}
             </Typography>
             <Link to="/">
               <Button
@@ -113,18 +130,17 @@ const Exam = () => {
           </Toolbar>
         </AppBar>
 
-
         <div className="p-10">
         {error?.message}
 
-        {questions.length > 0 && <Question {...currentQuestion()} />}
+        {questions.value.length > 0 && <Question {...currentQuestion()} />}
 
         <br />
         <h1 className="text-center">
           <div>
             <Box sx={{ width: "100%" }}>
               <div>
-                {current + 1} / {questions.length}
+                {current + 1} / {questions.value.length}
               </div>
               <br />
               <LinearProgress variant="determinate" value={progress()} />
