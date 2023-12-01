@@ -126,16 +126,7 @@ const Exam = () => {
           </Toolbar>
         </AppBar>
 
-
-        <div className="p-10">
-        {error?.message}
-
-        {questions.value.length ==0 && <Link to="/"><Button variant="outlined" color="error">Questions not found. Try another Exam</Button></Link>}
-
-        {questions.value.length > 0 && <><Question {...currentQuestion()} /> 
-
-        <br />
-        <h1 className="text-center">
+       <h1 className="text-center">
           <div>
             <Box sx={{ width: "100%" }}>
               <div>
@@ -150,6 +141,15 @@ const Exam = () => {
           </>
           }
 
+        <div className="p-10">
+        {error?.message}
+
+        {questions.value.length ==0 && <Link to="/"><Button variant="outlined" color="error">Questions not found. Try another Exam</Button></Link>}
+
+        {questions.value.length > 0 && <><Question {...currentQuestion()} /> 
+
+   
+ 
       </div>
 
       </Box>
