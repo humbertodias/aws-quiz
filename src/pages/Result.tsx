@@ -42,10 +42,6 @@ const Result = () => {
   };
 
 
-  const currentExam = () => {
-    return exams.value.filter((e) => e.id == id)
-  };
-
   return (
     <>
       <Box
