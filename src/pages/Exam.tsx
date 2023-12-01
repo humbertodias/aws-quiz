@@ -17,7 +17,7 @@ import Button from "@mui/material/Button";
 import HomeIcon from "@mui/icons-material/Home";
 import CampaignIcon from "@mui/icons-material/Campaign";
 
-import { exams, questions, corrects } from "../store";
+import { questions, corrects } from "../store";
 
 const Exam = () => {
   const { id } = useParams<string>();

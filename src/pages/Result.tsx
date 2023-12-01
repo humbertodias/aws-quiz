@@ -41,6 +41,9 @@ const Result = () => {
     return score() >= currentExam()[0].score;
   };
 
+  const currentExam = () => {
+    return exams.value.filter((e) => e.id == id)
+  };
 
   return (
     <>
