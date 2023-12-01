@@ -68,7 +68,7 @@ const Result = () => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Result {id} {currentExam()[0].name}
+              Result - {id}
             </Typography>
             <Link to="/">
               <Button
