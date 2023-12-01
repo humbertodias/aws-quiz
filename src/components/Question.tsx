@@ -126,7 +126,7 @@ const Question = (question: QuestionProps) => {
         return (
           <div
             key={a.index}
-            className="mt-2 p-5 shadow rounded cursor-pointer transition-colors"
+            className="mt-2 p-3 shadow rounded cursor-pointer transition-colors"
             style={{ backgroundColor: a.state }}
             onClick={() => onSelect(a.index)}
           >

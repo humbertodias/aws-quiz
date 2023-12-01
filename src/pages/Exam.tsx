@@ -26,7 +26,7 @@ const Exam = () => {
   const [current, setCurrent] = useState<number>(0);
 
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     Api.get(`/json/${id}.json`)
       .then((response) => {
@@ -35,15 +35,13 @@ const Exam = () => {
       .catch((err) => {
         console.error(err);
         setError(err);
-      }).finally(()=> {
-
+      })
+      .finally(() => {
         corrects.value = [] as boolean[];
-        for(let i=0; i< questions.value.length; i++){
-          corrects.value.push()
+        for (let i = 0; i < questions.value.length; i++) {
+          corrects.value.push();
         }
-  
       });
-
   }, [id]);
 
   const randomQuestions = (q: QuestionProps[]) => {
@@ -55,19 +53,19 @@ const Exam = () => {
   };
 
   const onAnswer = (correct: boolean) => {
-    corrects.value[current] = correct
-  }
+    corrects.value[current] = correct;
+  };
 
   const onNext = () => {
     if (canMoveRight()) {
       setCurrent(current + 1);
     } else {
-      navigate(`/result/${id}`)
+      navigate(`/result/${id}`);
     }
   };
 
   const canMoveRight = () => {
-    return current + 1 < questions.value.length
+    return current + 1 < questions.value.length;
   };
 
   const canMoveLeft = () => {
@@ -87,7 +85,7 @@ const Exam = () => {
     const cq = questions.value[current];
     cq.moveNext = onNext;
     cq.movePrevious = onPrevious;
-    cq.onAnswer = onAnswer
+    cq.onAnswer = onAnswer;
     return cq;
   };
 
@@ -114,7 +112,7 @@ const Exam = () => {
                 color="inherit"
                 endIcon={<HomeIcon />}
                 title="Go back to Home"
-                ></Button>
+              ></Button>
             </Link>
             <Button
               size="large"
@@ -126,34 +124,35 @@ const Exam = () => {
           </Toolbar>
         </AppBar>
 
-       <h1 className="text-center">
+        <h1 className="text-center pt-1">
           <div>
             <Box sx={{ width: "100%" }}>
-              <div>
+              <div className="pb-2">
                 {current + 1} / {questions.value.length}
               </div>
-              <br />
               <LinearProgress variant="determinate" value={progress()} />
             </Box>
-
           </div>
-          </h1> 
-        
+        </h1>
 
-        <div className="p-10">
-        {error?.message}
+        <div className="p-2">
+          {error?.message}
 
-        {questions.value.length ==0 && <Link to="/"><Button variant="outlined" color="error">Questions not found. Try another Exam</Button></Link>}
+          {questions.value.length == 0 && (
+            <Link to="/">
+              <Button variant="outlined" color="error">
+                Questions not found. Try another Exam
+              </Button>
+            </Link>
+          )}
 
-        {questions.value.length > 0 && <><Question {...currentQuestion()} /> 
-
-     </>
-          }
- 
-      </div>
-
+          {questions.value.length > 0 && (
+            <>
+              <Question {...currentQuestion()} />
+            </>
+          )}
+        </div>
       </Box>
-
     </>
   );
 };
