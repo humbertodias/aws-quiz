@@ -6,6 +6,9 @@ import QuestionProps from "../type/QuestionProps";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle/AlertTitle";
 
+import Button from "@mui/material/Button";
+import InfoIcon from '@mui/icons-material/Info';
+
 import { signal } from "@preact/signals-react"
 const alternatives = signal<AlternativeProps[]>([]);
 const answers = signal<string[]>([]);
@@ -69,15 +72,15 @@ const Question = (question: QuestionProps) => {
       
       switch (newState) {
         case AlternativeState.CORRECT:
-          expire.value = question.id
           question.onAnswer(true)
           break;
         case AlternativeState.INCORRECT:
-          showHint.value = true
           question.onAnswer(false)
           break;
       }
       updateState(index, newState);
+      expire.value = question.id
+
     }
   }
 
@@ -99,14 +102,18 @@ const Question = (question: QuestionProps) => {
     return answers.value.filter(a => a != '')
   }
 
+  const toggleHint = ()=> {
+    showHint.value = !showHint.value
+  }
   return (
     <div key={question.id}>
-      <div className="text-lg">{question.question}</div>
+      
+      <div className="text-lg">{question.question}<Button color="inherit" startIcon={<InfoIcon />} onClick={toggleHint}></Button></div>
       <br />
 
       {showHint.value && (
-        <Alert severity="error" onClose={() => question.moveNext()}>
-          <AlertTitle>Tip - Close to see the next question</AlertTitle>
+        <Alert severity="info">
+          <AlertTitle>Hint</AlertTitle>
           {question.hint}
         </Alert>
       )}
