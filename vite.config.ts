@@ -43,16 +43,24 @@ const manifestForPlugin: Partial<VitePWAOptions> = {
 	},
 };
 
+import * as child from "child_process";
+const commitHash = child.execSync("git rev-parse --short HEAD").toString()
+
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
+  
   const config = {
     plugins: [react(), VitePWA(manifestForPlugin)],
     base: '/',
+	define: {
+		'import.meta.env.VITE_APP_VERSION': JSON.stringify(commitHash)
+	}
   }
 
   if (command !== 'serve') {
     config.base = '/aws-quiz/'
   }
+  
 
   return config
 })

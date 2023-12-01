@@ -48,7 +48,7 @@ function Home() {
               target={"_blank"}
               to="https://github.com/humbertodias/aws-quiz"
             >
-              <Button color="inherit" endIcon={<GitHubIcon />}></Button>
+              <Button color="inherit" endIcon={<GitHubIcon />} title={import.meta.env.VITE_APP_VERSION}></Button>
             </Link>
           </Toolbar>
         </AppBar>
