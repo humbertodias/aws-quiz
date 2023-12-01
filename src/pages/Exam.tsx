@@ -138,8 +138,7 @@ const Exam = () => {
 
           </div>
           </h1> 
-          </>
-          }
+        
 
         <div className="p-10">
         {error?.message}
@@ -148,7 +147,8 @@ const Exam = () => {
 
         {questions.value.length > 0 && <><Question {...currentQuestion()} /> 
 
-   
+     </>
+          }
  
       </div>
 
