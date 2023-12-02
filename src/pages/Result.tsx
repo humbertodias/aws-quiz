@@ -11,15 +11,20 @@ import Button from "@mui/material/Button";
 
 import HomeIcon from "@mui/icons-material/Home";
 import CampaignIcon from "@mui/icons-material/Campaign";
+import PrintIcon from '@mui/icons-material/Print';
 
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle/AlertTitle";
 
 
 import { exams, questions, corrects } from "../store";
+import { useRef } from "react";
+import ReactToPrint from "react-to-print";
+
 
 const Result = () => {
   const { id } = useParams<string>()
+  const componentRef = useRef<HTMLDivElement | null>(null);
 
   const sayQuestion = (index: number) => {
     speakText(questions.value[index].question);
@@ -44,6 +49,8 @@ const Result = () => {
   const currentExam = () => {
     return exams.value.filter((e) => e.id == id)
   };
+
+
 
   return (
     <>
@@ -77,9 +84,20 @@ const Result = () => {
                 title="Go back to Home"
               ></Button>
             </Link>
+            <ReactToPrint
+              trigger={() => <Button color="inherit" endIcon={<PrintIcon />}></Button>}
+              content={() => componentRef.current}
+            />
+
           </Toolbar>
         </AppBar>
 
+        <ReactToPrint
+              trigger={() => <Button color="inherit" endIcon={<PrintIcon />}>Print this out!</Button>}
+              content={() => componentRef.current}
+            />
+
+        <div ref={(el) => (componentRef.current = el)}>
         <div className="pt-5 text-center">
           <div>
             <div className="text-green-700">Correct {countCorrect()}</div>
@@ -136,6 +154,7 @@ const Result = () => {
               </>
             );
           })}
+          </div>
         </div>
       </Box>
     </>
