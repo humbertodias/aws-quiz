@@ -1,12 +1,12 @@
-let msg: SpeechSynthesisUtterance;
+let utterance: SpeechSynthesisUtterance;
 export const startAssistant = () => {
-  msg = new SpeechSynthesisUtterance();
+  utterance = new SpeechSynthesisUtterance();
+  utterance.lang = "en";
 };
 
 export const stopAssistant = () => {};
 
 export const speakText = (text: string) => {
-  console.log(text);
-  msg.text = text;
-  window.speechSynthesis.speak(msg);
+  utterance.text = text;
+  window.speechSynthesis.speak(utterance);
 };
