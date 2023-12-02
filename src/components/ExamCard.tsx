@@ -5,79 +5,137 @@ import AssignmentIcon from "@mui/icons-material/Assignment";
 import GpsFixedIcon from '@mui/icons-material/GpsFixed';
 import ContentPasteIcon from '@mui/icons-material/ContentPaste';
 import BadgeIcon from '@mui/icons-material/Badge';
+import MoreVertIcon from '@mui/icons-material/Badge';
+import ExpandMoreIcon from '@mui/icons-material/Badge';
 
 import {
   Card,
-  Box,
   CardContent,
   Typography,
   CardMedia,
   CardActions,
   Button,
+  Collapse,
+  CardHeader,
+  IconButton,
+  IconButtonProps,
+  styled,
 } from "@mui/material";
+
+import { useState } from "react";
+
+
+
+interface ExpandMoreProps extends IconButtonProps {
+  expand: boolean;
+}
+
+const ExpandMore = styled((props: ExpandMoreProps) => {
+  const { expand, ...other } = props;
+  return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+  marginLeft: 'auto',
+  transition: theme.transitions.create('transform', {
+    duration: theme.transitions.duration.shortest,
+  }),
+}));
+
 function ExamCard(exam: ExamProps) {
+
+
+  const [expanded, setExpanded] = useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
+
   return (
     <div key={exam.id}>
-      <Card sx={{ display: "flex", padding: 2, margin: 2, textAlign: "right" }}>
-        <CardMedia
-          component="img"
-          sx={{ width: 256 }}
-          image={exam.image}
-          alt={exam.name}
-        />
 
-        <Box sx={{ display: "flex", flexDirection: "column" }}>
-          <CardContent sx={{ flex: "1 0 auto" }}>
-            <Typography component="div" variant="h5">
-              {exam.id}
-            </Typography>
-            <br></br>
-            <Typography
-              variant="body1"
-              color="text.secondary"
-              component="div"
-            >
-              {exam.description}
-            </Typography>
-          </CardContent>
-          <CardActions style={{ width: "100%", justifyContent: "flex-end" }}>
 
-            <Link
+
+<Card sx={{ maxWidth: 345, margin: 1 }}>
+      <CardHeader
+        // avatar={
+        //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+        //     R
+        //   </Avatar>
+        // }
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+        title={exam.id}
+        // subheader="September 14, 2016"
+      />
+      <CardMedia
+        component="img"
+        height="194"
+        image={exam.image}
+        alt="Paella dish"
+      />
+      <CardContent>
+        <Typography variant="body2" color="text.secondary">
+        {exam.description.substring(0,100)}...
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+
+      <Link
               target={"_blank"}
               to={exam.guide}
             >
-              <Button variant="outlined">
+              <Button  title="Guide">
                 <GpsFixedIcon />
-                Guide
+                {/* Guide */}
               </Button>
             </Link>
             <Link
               target={"_blank"}
               to={exam.sample}
             >
-              <Button variant="outlined">
+              <Button  title="Sample">
                 <ContentPasteIcon />
-                Sample
+                {/* Sample */}
               </Button>
             </Link>
             <Link
               target={"_blank"}
               to={exam.practice}
             >
-              <Button variant="outlined">
+              <Button  title="Practice">
                 <BadgeIcon />
-                Practice
+                {/* Practice */}
               </Button>
             </Link>
             <Link to={`/exam/${exam.id}`}>
-              <Button variant="outlined">
+              <Button  title="Exam">
                 <AssignmentIcon />
-                Exam
+                {/* Exam */}
               </Button>
             </Link>
-          </CardActions>
-        </Box>
-      </Card>
+
+        <ExpandMore
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </ExpandMore>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography paragraph>Description:</Typography>
+          <Typography paragraph>
+          {exam.description}
+          </Typography>
+        </CardContent>
+      </Collapse>
+    </Card>
+    
     </div>
   );
 }
