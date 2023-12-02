@@ -1,7 +1,7 @@
 let utterance: SpeechSynthesisUtterance;
 export const startAssistant = () => {
   utterance = new SpeechSynthesisUtterance();
-  utterance.lang = "en";
+  utterance.lang = 'en-US';
 };
 
 export const stopAssistant = () => {};
