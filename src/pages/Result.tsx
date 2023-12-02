@@ -26,10 +26,6 @@ const Result = () => {
   const { id } = useParams<string>()
   const componentRef = useRef<HTMLDivElement | null>(null);
 
-  const sayQuestion = (index: number) => {
-    speakText(questions.value[index].question);
-  };
-
   const countCorrect = () => {
     return corrects.value.filter((c) => c == true).length;
   };
@@ -121,7 +117,7 @@ const Result = () => {
                   return (
                   <div>
                     <Button
-                  onClick={() => sayQuestion(index)}
+                  onClick={() => speakText(a)}
                   color="inherit"
                   endIcon={<CampaignIcon />}
                   title="Read outloud the question"
@@ -136,7 +132,7 @@ const Result = () => {
                   return (
                   <div className="text-green-700">
                     <Button
-                  onClick={() => sayQuestion(index)}
+                  onClick={() => speakText(a)}
                   color="inherit"
                   endIcon={<CampaignIcon />}
                   title="Read outloud the question"
