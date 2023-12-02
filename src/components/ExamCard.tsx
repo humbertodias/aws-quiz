@@ -109,7 +109,6 @@ function ExamCard(exam: ExamProps) {
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography paragraph>Description:</Typography>
             <Typography paragraph>{exam.description}</Typography>
           </CardContent>
         </Collapse>
