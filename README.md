@@ -8,7 +8,7 @@ Access [humbertodias.github.io/aws-quiz](https://humbertodias.github.io/aws-quiz
 
 <img width="1058" alt="imagen" src="https://github.com/humbertodias/aws-quiz/assets/9255997/38be0897-3ca4-464d-a7ec-15fa8ee9c215">
 
-or in your mobile phone, clicking on  **Add aws-quiz to Home Screen**
+For your mobile phone, just click on **Add AWS-quiz to Home Screen** notification or **... > Install App**
 
 <img height="800" alt="imagen" src="https://github.com/humbertodias/aws-quiz/assets/9255997/f5f492c0-04a4-401e-89f4-717706a8d6a9">
 
