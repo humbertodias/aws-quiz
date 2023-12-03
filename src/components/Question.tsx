@@ -10,7 +10,6 @@ import Button from "@mui/material/Button";
 import InfoIcon from "@mui/icons-material/Info";
 
 import { signal } from "@preact/signals-react";
-import Alternative from "./Alternative";
 const alternatives = signal<AlternativeProps[]>([]);
 const answers = signal<string[]>([]);
 const expire = signal<string | null>(null);
