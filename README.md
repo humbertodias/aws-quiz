@@ -2,6 +2,14 @@
 
 It's an AWS simulated test app that I used to study for official exams.
 
+### Features
+* [x] Dynamic JSON content
+* [x] PWA with mobile support
+* [x] Speech Synthesizer 
+* [x] Printable result
+* [ ] Timer
+* [ ] Review flag
+  
 # Test
 
 Access [humbertodias.github.io/aws-quiz](https://humbertodias.github.io/aws-quiz) and install in your desktop
