@@ -96,6 +96,7 @@ const Result = () => {
         <div ref={(el) => (componentRef.current = el)}>
         <div className="pt-5 text-center">
           <div>
+            <div>{currentExam()[0].name}</div>
             <div className="text-green-700">Correct {countCorrect()}</div>
             <div className="text-red-700">Incorrect {countIncorrect()}</div>
             <div>Score {score()} / {currentExam()[0].score}</div>
