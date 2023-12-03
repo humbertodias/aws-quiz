@@ -7,16 +7,16 @@ import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle/AlertTitle";
 
 import Button from "@mui/material/Button";
-import InfoIcon from '@mui/icons-material/Info';
+import InfoIcon from "@mui/icons-material/Info";
 
-import { signal } from "@preact/signals-react"
+import { signal } from "@preact/signals-react";
+import Alternative from "./Alternative";
 const alternatives = signal<AlternativeProps[]>([]);
 const answers = signal<string[]>([]);
 const expire = signal<string | null>(null);
 const showHint = signal<boolean>(false);
 
 const Question = (question: QuestionProps) => {
-  
   const questions = [
     ...question.correct_answers,
     ...question.incorrect_answers,
@@ -35,8 +35,8 @@ const Question = (question: QuestionProps) => {
 
     alternatives.value = ss;
     answers.value = [] as string[];
-    for(let i=0; i < ss.length; i++){
-      answers.value.push()
+    for (let i = 0; i < ss.length; i++) {
+      answers.value.push();
     }
     showHint.value = false;
   }, [question.id]);
@@ -56,7 +56,7 @@ const Question = (question: QuestionProps) => {
       : AlternativeState.SELECTED;
     switch (newState) {
       case AlternativeState.DESELECTED:
-        answers.value[index] = ''
+        answers.value[index] = "";
         break;
       case AlternativeState.SELECTED:
         answers.value[index] = answer;
@@ -69,18 +69,17 @@ const Question = (question: QuestionProps) => {
       const newState = compareArrays(question.correct_answers, answers.value)
         ? AlternativeState.CORRECT
         : AlternativeState.INCORRECT;
-      
+
       switch (newState) {
         case AlternativeState.CORRECT:
-          question.onAnswer(true)
+          question.onAnswer(true);
           break;
         case AlternativeState.INCORRECT:
-          question.onAnswer(false)
+          question.onAnswer(false);
           break;
       }
       updateState(index, newState);
-      expire.value = question.id
-
+      expire.value = question.id;
     }
   }
 
@@ -95,20 +94,26 @@ const Question = (question: QuestionProps) => {
       return obj;
     });
 
-    alternatives.value = newState
+    alternatives.value = newState;
   };
 
   const selectedAnswers = () => {
-    return answers.value.filter(a => a != '')
-  }
+    return answers.value.filter((a) => a != "");
+  };
 
-  const toggleHint = ()=> {
-    showHint.value = !showHint.value
-  }
+  const toggleHint = () => {
+    showHint.value = !showHint.value;
+  };
   return (
     <div key={question.id}>
-      
-      <div className="text-lg">{question.question}<Button color="inherit" startIcon={<InfoIcon />} onClick={toggleHint}></Button></div>
+      <div className="text-lg">
+        {question.question}
+        <Button
+          color="inherit"
+          startIcon={<InfoIcon />}
+          onClick={toggleHint}
+        ></Button>
+      </div>
       <br />
 
       {showHint.value && (
@@ -117,11 +122,10 @@ const Question = (question: QuestionProps) => {
           {question.hint}
         </Alert>
       )}
-
-      {/* {alternatives.map((alternative) => {
-        return <Alternative {...alternative} />;
+      
+      {/* {alternatives.value.map((alternative) => {
+        return <Alternative {...alternative} />
       })} */}
-      {/* {selectedAnswers().length} */}
       {alternatives.value.map((a) => {
         return (
           <div
@@ -134,7 +138,6 @@ const Question = (question: QuestionProps) => {
           </div>
         );
       })}
-
     </div>
   );
 };

@@ -11,19 +11,17 @@ import Button from "@mui/material/Button";
 
 import HomeIcon from "@mui/icons-material/Home";
 import CampaignIcon from "@mui/icons-material/Campaign";
-import PrintIcon from '@mui/icons-material/Print';
+import PrintIcon from "@mui/icons-material/Print";
 
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle/AlertTitle";
-
 
 import { exams, questions, corrects } from "../store";
 import { useRef } from "react";
 import ReactToPrint from "react-to-print";
 
-
 const Result = () => {
-  const { id } = useParams<string>()
+  const { id } = useParams<string>();
   const componentRef = useRef<HTMLDivElement | null>(null);
 
   const countCorrect = () => {
@@ -43,10 +41,8 @@ const Result = () => {
   };
 
   const currentExam = () => {
-    return exams.value.filter((e) => e.id == id)
+    return exams.value.filter((e) => e.id == id);
   };
-
-
 
   return (
     <>
@@ -81,76 +77,80 @@ const Result = () => {
               ></Button>
             </Link>
             <ReactToPrint
-              trigger={() => <Button color="inherit" endIcon={<PrintIcon />}></Button>}
+              trigger={() => (
+                <Button color="inherit" endIcon={<PrintIcon />}></Button>
+              )}
               content={() => componentRef.current}
             />
-
           </Toolbar>
         </AppBar>
 
         <ReactToPrint
-              trigger={() => <Button color="inherit" endIcon={<PrintIcon />}>Print this out!</Button>}
-              content={() => componentRef.current}
-            />
+          trigger={() => (
+            <Button color="inherit" endIcon={<PrintIcon />}>
+              Print this out!
+            </Button>
+          )}
+          content={() => componentRef.current}
+        />
 
         <div ref={(el) => (componentRef.current = el)}>
-        <div className="pt-5 text-center">
-          <div>
-            <div>{currentExam()[0].name}</div>
-            <div className="text-green-700">Correct {countCorrect()}</div>
-            <div className="text-red-700">Incorrect {countIncorrect()}</div>
-            <div>Score {score()} / {currentExam()[0].score}</div>
-            <div>Result {result() ? "Pass" : "Fail"}</div>
+          <div className="pt-5 text-center">
+            <div>
+              <div>{currentExam()[0].name}</div>
+              <div className="text-green-700">Correct {countCorrect()}</div>
+              <div className="text-red-700">Incorrect {countIncorrect()}</div>
+              <div>
+                Score {score()} / {currentExam()[0].score}
+              </div>
+              <div>Result {result() ? "Pass" : "Fail"}</div>
+            </div>
           </div>
-        </div>
 
-
-        <div className="p-10">
-
-          {questions.value.map((q, index) => {
-            return (
-              <>
-                {index + 1} - {q.question}
-                <br />
-                <br />
-    
-                {q.incorrect_answers.map((a) => {
-                  return (
-                  <div>
-                    <Button
-                  onClick={() => speakText(a)}
-                  color="inherit"
-                  endIcon={<CampaignIcon />}
-                  title="Read outloud the question"
-                ></Button>
-                    {a}
-                  </div>
-                  )
-                })}
-
-
-                {q.correct_answers.map((a) => {
-                  return (
-                  <div className="text-green-700">
-                    <Button
-                  onClick={() => speakText(a)}
-                  color="inherit"
-                  endIcon={<CampaignIcon />}
-                  title="Read outloud the question"
-                ></Button>
-                    {a}
-                  </div>
-                  )
-                })}
-                <span className="p-2"></span>
-                <Alert severity={corrects.value[index] ? "success" : "error"}>
-                  <AlertTitle>{corrects.value[index] ? "Correct" : "Incorrect"}</AlertTitle>
-                  {q.hint}
-                </Alert>
-                <br></br>
-              </>
-            );
-          })}
+          <div className="p-10">
+            {questions.value.map((q, index) => {
+              return (
+                <>
+                  {index + 1} - {q.question}
+                  <br />
+                  <br />
+                  {q.incorrect_answers.map((a) => {
+                    return (
+                      <div>
+                        <Button
+                          onClick={() => speakText(a)}
+                          color="inherit"
+                          endIcon={<CampaignIcon />}
+                          title="Read outloud the question"
+                        ></Button>
+                        {a}
+                      </div>
+                    );
+                  })}
+                  {q.correct_answers.map((a) => {
+                    return (
+                      <div className="text-green-700">
+                        <Button
+                          onClick={() => speakText(a)}
+                          color="inherit"
+                          endIcon={<CampaignIcon />}
+                          title="Read outloud the question"
+                        ></Button>
+                        {a}
+                      </div>
+                    );
+                  })}
+                  <span className="p-2"></span>
+                  <Alert severity={corrects.value[index] ? "success" : "error"}>
+                    <AlertTitle>
+                      {corrects.value[index] ? "Correct" : "Incorrect"}
+                    </AlertTitle>
+                    {q.hint}
+                  </Alert>
+                  <br></br>
+                </>
+              );
+            })}
           </div>
         </div>
       </Box>
