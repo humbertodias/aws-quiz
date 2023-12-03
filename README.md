@@ -1,6 +1,6 @@
 # AWS Quiz
 
-It's an AWS simulated test app that combines i used to study for official exams..
+It's an AWS simulated test app that I used to study for official exams.
 
 # Test
 
