@@ -65,7 +65,7 @@ const Question = (question: QuestionProps) => {
 
     // final answer
     if (question.correct_answers.length == selectedAnswers().length) {
-      const newState = compareArrays(question.correct_answers, answers.value)
+      const newState = compareArrays(question.correct_answers, selectedAnswers())
         ? AlternativeState.CORRECT
         : AlternativeState.INCORRECT;
 
