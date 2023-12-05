@@ -44,7 +44,7 @@ function Home() {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               AWS - Quiz
             </Typography>
-            v{import.meta.env.VITE_APP_VERSION}
+            {import.meta.env.VITE_APP_VERSION}
             <Link
               target={"_blank"}
               to="https://github.com/humbertodias/aws-quiz"
