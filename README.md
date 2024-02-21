@@ -1,3 +1,5 @@
+[![Deploy static content to Pages](https://github.com/humbertodias/aws-quiz/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/humbertodias/aws-quiz/actions/workflows/gh-pages.yml)
+
 # AWS Quiz
 
 It's an AWS simulated test app that I used to study for official exams.
